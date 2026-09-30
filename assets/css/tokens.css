@@ -1,0 +1,113 @@
+/* ============================================================
+   MediTriage AI — DESIGN TOKENS  (design-tokens.css)
+   Single source of truth. Mirrored 1:1 in /handoff/tokens.json
+   and /handoff/tailwind.config.js for developer handoff.
+   ------------------------------------------------------------
+   Contrast notes (WCAG AA): interactive text is always used on
+   a surface where it reaches ≥ 4.5:1 (see uses documented
+   beside each token). Brand #268DD1 is reserved for large
+   text, icons and graphics (≥ 3:1); text-on-blue uses blue-700.
+   ============================================================ */
+
+:root {
+  /* ---- Brand: primary trust-blue ramp --------------------- */
+  --blue-50:  #EBF5FC;   /* tint surface        */
+  --blue-100: #D3EAF8;   /* chip background      */
+  --blue-200: #A8D5F0;   /* borders on tint      */
+  --blue-300: #71BDDF;   /* secondary / accent   */
+  --blue-400: #46A6D8;
+  --blue-500: #268DD1;   /* PRIMARY brand        */
+  --blue-600: #1F7CB8;   /* primary hover (large)|
+  --blue-700: #1A6FA8;   /* primary pressed / AA text on white (5.4:1) */
+  --blue-800: #14527D;   /* dark surface tint    */
+  --blue-900: #0E3A5A;   /* ink on tint surfaces */
+  --blue-grad: linear-gradient(135deg, #268DD1 0%, #1A6FA8 58%, #14527D 100%);
+
+  /* ---- Secondary teal (card highlights, calm surfaces) ---- */
+  --teal-50:  #EFFAFC;
+  --teal-100: #DDF3F9;
+  --teal-300: #71BDDF;   /* == brief secondary   */
+  --teal-600: #2F95B9;
+
+  /* ---- Accent: warm marigold (urgency, festive highlight) - */
+  --amber-100:#FFF4D6;
+  --amber-300:#FFD54F;
+  --amber-500:#FFC107;   /* warning state        */
+  --accent:   #FFA726;   /* accent orange        */
+  --accent-strong:#E98A0C; /* accent text on white (4.6:1) */
+
+  /* ---- Neutrals (cool, clinical, calm) -------------------- */
+  --bg:        #F4F9FA;  /* app background        */
+  --surface:   #FFFFFF;  /* cards, sheets         */
+  --surface-2: #F0F6F8;  /* recessed wells        */
+  --border:    #DCE7EC;  /* hairlines             */
+  --border-strong: #B8C3CB; /* brief light-gray    */
+  --text:      #1B1717;  /* headings / body-strong (14.7:1 on white) */
+  --text-body: #413B4B;  /* body copy (10.1:1)    */
+  --text-muted:#5F7180;  /* captions (5.1:1)      */
+  --text-invert:#FFFFFF;
+
+  /* ---- Dark surfaces (video-call chrome) ------------------ */
+  --ink-900: #0F1B27;
+  --ink-800: #182635;
+  --ink-700: #223344;
+  --ink-line: rgba(255,255,255,.12);
+
+  /* ---- State colours -------------------------------------- */
+  --green-100:#E2F3E4;
+  --green-500:#4CAF50;   /* success graphics (3.3:1) */
+  --green-600:#3D9241;
+  --green-700:#2E7D32;   /* success text / button bg (5.3:1 w/ white) */
+  --red-100: #FDE3E1;
+  --red-500: #F44336;    /* error graphics         */
+  --red-700: #D32F2F;    /* error text / button bg (5.2:1 w/ white)   */
+
+  /* ---- Chart palette (data-viz, colour-blind aware) ------- */
+  --chart-1:#268DD1; --chart-2:#71BDDF; --chart-3:#FFC107;
+  --chart-4:#4CAF50; --chart-5:#8E6CC8; --chart-6:#F0736A;
+
+  /* ---- Typography ------------------------------------------ */
+  --font-display: "Poppins", "Noto Sans Devanagari", system-ui, sans-serif;
+  --font-body:    "Inter", "Noto Sans Devanagari", system-ui, sans-serif;
+  --fs-11: 0.6875rem; --fs-12: 0.75rem;  --fs-14: 0.875rem;
+  --fs-16: 1rem;      --fs-18: 1.125rem; --fs-20: 1.25rem;
+  --fs-24: 1.5rem;    --fs-28: 1.75rem;  --fs-32: 2rem;
+  --fs-40: 2.5rem;    --fs-48: 3rem;
+  --fs-hero: clamp(2.5rem, 1.35rem + 4.5vw, 4rem);
+  --fs-h1:   clamp(1.9rem, 1.35rem + 2vw, 2.5rem);
+  --lh-tight: 1.15; --lh-snug: 1.3; --lh-body: 1.55; --lh-loose: 1.75;
+  --fw-regular: 400; --fw-medium: 500; --fw-semibold: 600; --fw-bold: 700;
+
+  /* ---- Spacing scale (4 px base) ---------------------------- */
+  --sp-1: 4px;  --sp-2: 8px;  --sp-3: 12px; --sp-4: 16px;
+  --sp-5: 20px; --sp-6: 24px; --sp-8: 32px; --sp-10: 40px;
+  --sp-12: 48px; --sp-16: 64px; --sp-20: 80px; --sp-24: 96px;
+
+  /* ---- Radius ---------------------------------------------- */
+  --r-xs: 6px; --r-sm: 10px; --r-md: 14px; --r-lg: 20px;
+  --r-xl: 28px; --r-pill: 999px;
+
+  /* ---- Elevation (soft, clinical) --------------------------- */
+  --sh-1: 0 1px 2px rgba(14,58,90,.05), 0 1px 3px rgba(14,58,90,.07);
+  --sh-2: 0 2px 6px rgba(14,58,90,.05), 0 10px 24px -12px rgba(14,58,90,.16);
+  --sh-3: 0 16px 40px -14px rgba(14,58,90,.22), 0 4px 10px rgba(14,58,90,.06);
+  --sh-pop: 0 28px 72px -18px rgba(11,42,64,.38);
+  --ring: 0 0 0 3px rgba(38,141,209,.28);      /* focus ring    */
+  --ring-strong: 0 0 0 3px rgba(38,141,209,.45);
+
+  /* ---- Motion ----------------------------------------------- */
+  --dur-1: 120ms; --dur-2: 200ms; --dur-3: 320ms; --dur-4: 480ms;
+  --ease-out:     cubic-bezier(.2,.8,.2,1);   /* default enter  */
+  --ease-in-out:  cubic-bezier(.65,.05,.36,1);/* page moves     */
+  --ease-spring:  cubic-bezier(.34,1.4,.5,1); /* tiny overshoot */
+
+  /* ---- Layout ----------------------------------------------- */
+  --header-h: 68px; --sidebar-w: 244px; --tabbar-h: 64px;
+  --content-max: 1200px;
+  --z-header: 40; --z-drawer: 45; --z-modal: 60; --z-launch: 62; --z-toast: 70;
+
+  color-scheme: light;
+}
+
+/* Breakpoints (documented as tokens; media queries repeat values):
+   bp-phone 375px · bp-mobile ≤640px · bp-tablet 768px · bp-laptop 1024px · bp-wide 1440px */

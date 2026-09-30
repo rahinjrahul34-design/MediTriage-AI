@@ -1,0 +1,105 @@
+/* ============================================================
+   MediTriage AI — RESPONSIVE BEHAVIOUR
+   breakpoints: 640 (mobile) · 900 (tablet) · 1080 (laptop) · 1440 (wide)
+   Mobile-first content prioritisation per design brief.
+   ============================================================ */
+
+@media (max-width: 1180px) {
+  .trip-none-xl { display: none !important; }
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+  .chart-grid { grid-template-columns: 1fr; }
+  .triage-grid { grid-template-columns: 1fr; }
+  .summary-grid { grid-template-columns: 1fr; }
+  .profile-grid { grid-template-columns: 1fr; }
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+  .doc-strip { grid-template-columns: repeat(2, 1fr); }
+  .assistant { grid-template-columns: 1fr; }
+  .assistant-side { display: none; }
+}
+
+@media (max-width: 1080px) {
+  /* Collapse sidebar → bottom tab bar */
+  .sidebar { display: none; }
+  .tabbar { display: flex; }
+  .app-main { padding-bottom: calc(var(--tabbar-h) + 32px); }
+  .header-search { display: none; }
+  .finder { grid-template-columns: 1fr; }
+  .map-panel { position: relative; top: 0; order: -1; }
+  .records-layout { grid-template-columns: 1fr; }
+  .dash-hero { grid-template-columns: 1fr; }
+  .dash-hero > .hide-m { display: none; }
+  .col-4, .col-6, .col-8 { grid-column: span 12; }
+  .auth { grid-template-columns: 1fr; }
+  .auth__aside { display: none; }
+  .steps { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; padding-top: 36px; }
+  .hero__visual { margin-top: 18px; }
+  .float-chip--a { left: 4px; }
+  .float-chip--b { right: 4px; }
+  .split { grid-template-columns: 1fr; }
+  .landing-nav .links { display: none; }
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+  .wait-card { grid-template-columns: 1fr; }
+  .vitals-grid { grid-template-columns: 1fr 1fr; }
+  .profile-hero { grid-template-columns: auto 1fr; }
+  .profile-hero .cta-col { grid-column: 1 / -1; display: flex; gap: 10px; }
+  .avail { overflow-x: auto; }
+  .avail__days { min-width: 560px; }
+}
+
+@media (max-width: 640px) {
+  :root { --header-h: 60px; }
+  .app-header { padding: 0 var(--sp-4); gap: var(--sp-2); }
+  .app-main { padding: var(--sp-5) var(--sp-4) calc(var(--tabbar-h) + 28px); }
+  .profile-btn .who, .profile-btn .icon.chev { display: none; }
+  .netchip .lbl { display: none; }
+  .page-title h1 { font-size: var(--fs-24); }
+
+  .features-grid, .doc-strip, .steps, .vitals-grid, .stat-grid { grid-template-columns: 1fr; }
+  .role-grid { grid-template-columns: 1fr; }
+  .otp-row { gap: 8px; } .otp-box { width: 48px; height: 56px; }
+  .hero__ctas .btn { flex: 1; justify-content: center; }
+  .doc-card { flex-wrap: wrap; }
+  .doc-card .book { margin-left: 0; flex: 1; }
+  .success-hero { padding: var(--sp-6) var(--sp-3); }
+  .booking .step .txt { display: none; }
+  .call-stage { margin: 0 10px; }
+  .call__top { padding: 10px 14px; flex-wrap: wrap; }
+  .call__controls { gap: 10px; padding: 16px 10px; }
+  .ctrl { width: 50px; height: 50px; }
+  .footer__grid { grid-template-columns: 1fr; }
+  #toast-root { top: auto; bottom: calc(var(--tabbar-h) + 14px); right: 16px; }
+  .modal { border-radius: var(--r-lg) var(--r-lg) 0 0; align-self: end; }
+  .modal-backdrop { padding: 0; place-items: end center; }
+  .modal__foot { flex-direction: column-reverse; } .modal__foot .btn { width: 100%; }
+  .cta-band .btn { width: 100%; justify-content: center; }
+  .hero__tagline-swap .swap { min-width: 200px; }
+}
+
+@media (min-width: 1440px) {
+  .app-main { padding-left: var(--sp-12); padding-right: var(--sp-12); }
+}
+
+/* Device-frame review mode (prototype tooling: view app at phone width) */
+body.device-phone { background: #D9E4EA; }
+body.device-phone #app-root, body.device-phone #chrome-root {
+  max-width: 430px; margin: 0 auto; min-height: 100dvh;
+  box-shadow: 0 0 0 1px rgba(11,42,64,.18), 0 30px 80px -30px rgba(11,42,64,.5);
+  background: var(--bg);
+}
+body.device-phone .sidebar { display: none; }
+body.device-phone .tabbar { display: flex; position: sticky; max-width: 430px; margin: 0 auto; }
+body.device-phone .header-search { display: none; }
+body.device-phone .finder, body.device-phone .triage-grid, body.device-phone .summary-grid,
+body.device-phone .profile-grid, body.device-phone .dash-hero, body.device-phone .records-layout,
+body.device-phone .split, body.device-phone .hero, body.device-phone .assistant,
+body.device-phone .auth { grid-template-columns: 1fr; }
+body.device-phone .col-4, body.device-phone .col-6, body.device-phone .col-8 { grid-column: span 12; }
+body.device-phone .auth__aside, body.device-phone .assistant-side { display: none; }
+body.device-phone .features-grid, body.device-phone .doc-strip, body.device-phone .steps,
+body.device-phone .vitals-grid, body.device-phone .stat-grid { grid-template-columns: 1fr; }
+body.device-phone .map-panel { position: relative; top: 0; order: -1; }
+body.device-phone .call { max-width: 430px; margin: 0 auto; left: 0; right: 0; }

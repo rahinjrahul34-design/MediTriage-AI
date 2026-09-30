@@ -1,0 +1,66 @@
+<!-- ============================================================
+     PROTOTYPE TOOLING · launchpad (screen index) + overlays
+     ============================================================ -->
+<button class="launchpad-fab" id="launch-fab" type="button" aria-expanded="false" aria-controls="launchpad">
+  <svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg> Screens
+</button>
+<nav class="launchpad hide" id="launchpad" aria-label="Prototype screen index">
+  <div class="launchpad__head">
+    <b style="font-family:var(--font-display)">MediTriage AI · Screen index</b>
+    <p class="muted" style="font-size:var(--fs-12);margin-top:2px">14 hi-fi screens · click to walk the flows</p>
+  </div>
+  <div class="launchpad__body scroll-y">
+    <h4>Public</h4>
+    <a href="#/"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg> Landing page <span class="k">A</span></a>
+    <a href="#/login"><svg class="icon" aria-hidden="true"><use href="#i-smartphone"/></svg> Login · OTP <span class="k">B</span></a>
+    <a href="#/signup"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg> Signup · role select <span class="k">C</span></a>
+    <h4>Patient flows</h4>
+    <a href="#/home"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg> Patient dashboard <span class="k">1</span></a>
+    <a href="#/assistant"><svg class="icon" aria-hidden="true"><use href="#i-mic"/></svg> AI assistant · voice+chat <span class="k">2</span></a>
+    <a href="#/triage-result"><svg class="icon" aria-hidden="true"><use href="#i-activity"/></svg> Triage result · explainable <span class="k">3</span></a>
+    <a href="#/doctors"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg> Doctor search + map <span class="k">4</span></a>
+    <a href="#/doctor/asha"><svg class="icon" aria-hidden="true"><use href="#i-stethoscope"/></svg> Doctor profile + availability <span class="k">5</span></a>
+    <a href="#/book/asha"><svg class="icon" aria-hidden="true"><use href="#i-calendar-check"/></svg> Booking flow · 3 steps <span class="k">6</span></a>
+    <a href="#/booking-success"><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg> Booking success <span class="k">6a</span></a>
+    <a href="#/booking-conflict"><svg class="icon" aria-hidden="true"><use href="#i-x-circle"/></svg> Slot conflict state <span class="k">6b</span></a>
+    <a href="#/call"><svg class="icon" aria-hidden="true"><use href="#i-video"/></svg> Video call · waiting + live <span class="k">7</span></a>
+    <a href="#/records"><svg class="icon" aria-hidden="true"><use href="#i-folder"/></svg> Records · timeline <span class="k">8</span></a>
+    <h4>Care team &amp; admin</h4>
+    <a href="#/summary"><svg class="icon" aria-hidden="true"><use href="#i-edit-2"/></svg> AI summary editor <span class="k">9</span></a>
+    <a href="#/admin"><svg class="icon" aria-hidden="true"><use href="#i-trending-up"/></svg> Admin analytics <span class="k">10</span></a>
+    <h4>Advanced features</h4>
+    <a href="#/vitals"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg> IoT vitals dashboard <span class="k">★</span></a>
+    <a href="#/assistant" id="lp-offline2"><svg class="icon" aria-hidden="true"><use href="#i-wifi-off"/></svg> Offline mode + sync queue <span class="k">★</span></a>
+    <a href="#/assistant"><svg class="icon" aria-hidden="true"><use href="#i-languages"/></svg> Multilingual voice triage <span class="k">★</span></a>
+    <a href="styleguide.html"><svg class="icon" aria-hidden="true"><use href="#i-book-open"/></svg> Design system &amp; tokens <span class="k">doc</span></a>
+    <h4>Simulate</h4>
+    <div class="row">
+      <button class="chip" id="lp-offline" type="button"><svg class="icon" aria-hidden="true"><use href="#i-wifi-off"/></svg> Toggle offline</button>
+      <button class="chip" id="lp-conflict" type="button"><svg class="icon" aria-hidden="true"><use href="#i-alert-triangle"/></svg> Arm slot-conflict demo</button>
+      <button class="chip" id="lp-device" type="button" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-smartphone"/></svg> Phone frame</button>
+    </div>
+  </div>
+</nav>
+
+<!-- Analyzing overlay (triage run) -->
+<div id="analyzing-overlay" class="hide" style="position:fixed;inset:0;z-index:80;background:rgba(244,249,250,.86);backdrop-filter:blur(10px);display:grid;place-items:center">
+  <div style="text-align:center;max-width:340px">
+    <div style="position:relative;width:110px;height:110px;margin:0 auto 26px">
+      <svg viewBox="0 0 100 100" style="position:absolute;inset:0;animation:spin 1.6s linear infinite"><circle cx="50" cy="50" r="44" fill="none" stroke="var(--blue-100)" stroke-width="8"/><circle cx="50" cy="50" r="44" fill="none" stroke="var(--blue-500)" stroke-width="8" stroke-linecap="round" stroke-dasharray="90 186"/></svg>
+      <span class="ai-badge" style="position:absolute;inset:26px;border-radius:28px;display:grid;place-items:center"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-logo"/></svg></span>
+    </div>
+    <h3 id="analyzing-text" style="margin-bottom:8px">Analyzing your symptoms…</h3>
+    <p class="muted" style="font-size:var(--fs-14)">Cross-checking 4 symptoms against regional outbreak data and your history</p>
+    <div style="display:flex;gap:8px;justify-content:center;margin-top:18px">
+      <span class="skeleton" style="width:120px;height:10px"></span>
+    </div>
+  </div>
+</div>
+
+<div id="toast-root" aria-live="polite"></div>
+
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

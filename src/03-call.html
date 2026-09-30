@@ -1,0 +1,96 @@
+<!-- ============================================================
+     VIDEO CONSULT · waiting room + live call (fullscreen chrome)
+     ============================================================ -->
+<section class="screen" id="screen-call" aria-label="Video consultation">
+  <div class="call" role="application" aria-label="Secure video consultation room">
+
+    <div class="call__top">
+      <button class="ctrl" onclick="if(confirm('Leave the consultation room?'))location.hash='#/home'" aria-label="Leave room and go home" style="width:44px;height:44px"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button>
+      <div class="title"><b>Dr. Rohan Mehta · Cardiology</b><span>Follow-up consult · Booking MT-420815</span></div>
+      <div style="margin-left:auto;display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+        <span class="call-chip"><svg class="icon" aria-hidden="true"><use href="#i-shield-check"/></svg> E2E encrypted</span>
+        <span class="call-chip"><span class="rec"></span> <span id="call-timer">00:00</span></span>
+        <span class="call-chip" id="call-quality"><svg class="icon" aria-hidden="true"><use href="#i-wifi"/></svg> HD</span>
+      </div>
+    </div>
+
+    <div class="call-stage">
+      <!-- ============ LIVE CALL ============ -->
+      <div id="live-call" class="hide" style="position:absolute;inset:0">
+        <div class="remote"><img src="assets/img/doctor-rohan.jpg" alt="Live video of Dr. Rohan Mehta"></div>
+        <span class="speaking-ring"><svg class="icon" style="--icon-sz:14px" aria-hidden="true"><use href="#i-mic"/></svg> Speaking…</span>
+        <span class="remote-name"><span style="width:9px;height:9px;border-radius:50%;background:var(--green-500)"></span> Dr. Rohan Mehta <span style="opacity:.65;font-weight:400">· Cardiologist</span></span>
+        <div class="call-self" id="self-view">
+          <img src="assets/img/kavita.jpg" alt="Your camera preview">
+          <span class="tag">You</span>
+        </div>
+        <div class="net-warn" id="net-warn" role="alert">
+          <svg class="icon" aria-hidden="true"><use href="#i-wifi-off"/></svg>
+          Poor connection — your video was paused to protect audio
+          <button class="btn btn--sm" id="btn-reconnect" style="background:#3B2500;color:#FFD97A;min-height:34px"><svg class="icon" aria-hidden="true"><use href="#i-refresh-cw"/></svg> Reconnect</button>
+        </div>
+        <button id="sim-net" class="call-chip" style="position:absolute;left:20px;bottom:64px;cursor:pointer" title="Prototype demo control">
+          <svg class="icon" aria-hidden="true"><use href="#i-zap"/></svg> Simulate weak signal
+        </button>
+      </div>
+
+      <!-- ============ WAITING ROOM ============ -->
+      <div class="wait-room" id="wait-room">
+        <div class="wait-card">
+          <div>
+            <div class="preview-cam"><img src="assets/img/kavita.jpg" alt="Your camera preview before joining"></div>
+            <p style="text-align:center;color:#8FA6B8;font-size:var(--fs-12);margin-top:10px">This is how the doctor will see you</p>
+          </div>
+          <div style="display:flex;flex-direction:column;justify-content:center">
+            <span class="kicker" style="color:#71BDDF">Waiting room</span>
+            <h2 style="color:#fff;font-size:var(--fs-28);margin-bottom:6px">Ready to join?</h2>
+            <p style="color:#B9CDDB;font-size:var(--fs-14);line-height:1.6">Dr. Rohan Mehta has your triage summary and yesterday’s vitals. Average wait is under 2 minutes.</p>
+            <ul class="device-check" role="list">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg> Camera · HD ready</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg> Microphone · clear</li>
+              <li id="net-check-li"><span class="spin" aria-hidden="true"></span> Testing connection…</li>
+            </ul>
+            <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+              <button class="btn btn--primary btn--lg" id="wait-join"><svg class="icon" aria-hidden="true"><use href="#i-video"/></svg> <span data-i18n="action.joinCall">Join Video Call</span></button>
+              <button class="btn" style="border:1.5px solid var(--ink-line);color:#DCE9F2" onclick="location.hash='#/home'"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg> Audio-only instead</button>
+            </div>
+            <p id="join-status" class="small" style="margin-top:14px;color:#71BDDF;min-height:20px" role="status" aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ CONTROL BAR ============ -->
+    <div class="call__controls" role="toolbar" aria-label="Call controls">
+      <div style="text-align:center"><button class="ctrl" id="ctrl-mic" aria-pressed="false" aria-label="Mute microphone"><svg class="icon" aria-hidden="true"><use href="#i-mic"/></svg></button><div class="ctrl-lbl" id="ctrl-mic-lbl">Mute</div></div>
+      <div style="text-align:center"><button class="ctrl" id="ctrl-cam" aria-pressed="false" aria-label="Stop video"><svg class="icon" aria-hidden="true"><use href="#i-video"/></svg></button><div class="ctrl-lbl" id="ctrl-cam-lbl">Stop video</div></div>
+      <div style="text-align:center"><button class="ctrl" id="ctrl-chat" data-drawer aria-label="Open in-call chat"><svg class="icon" aria-hidden="true"><use href="#i-message-square"/></svg></button><div class="ctrl-lbl">Chat</div></div>
+      <div style="text-align:center"><button class="ctrl" id="ctrl-notes" data-drawer aria-label="Open consultation notes"><svg class="icon" aria-hidden="true"><use href="#i-edit-2"/></svg></button><div class="ctrl-lbl">Notes</div></div>
+      <div style="text-align:center"><button class="ctrl ctrl--end" id="ctrl-end"><svg class="icon" aria-hidden="true"><use href="#i-phone-off"/></svg> <span style="color:#fff">End</span></button></div>
+    </div>
+
+    <!-- ============ CHAT DRAWER ============ -->
+    <aside class="call__drawer" id="drawer-chat" aria-label="In-call chat">
+      <div class="head"><b>Secure chat</b><button class="ctrl" data-close-drawer style="width:36px;height:36px" aria-label="Close chat"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button></div>
+      <div class="msgs scroll-y" id="call-chat-msgs">
+        <div class="cmsg"><b>Dr. Mehta</b>Namaste Kavita ji, I can hear you clearly. How is the chest feeling today?</div>
+        <div class="cmsg"><b>You</b>Better than last week, Doctor sahab. Walking is easier now.</div>
+      </div>
+      <form class="foot" id="call-chat-form">
+        <input id="call-chat-input" placeholder="Type a message…" autocomplete="off" aria-label="Type a message">
+        <button class="ctrl" style="width:46px;height:46px" aria-label="Send message"><svg class="icon" aria-hidden="true"><use href="#i-send"/></svg></button>
+      </form>
+    </aside>
+
+    <!-- ============ NOTES DRAWER ============ -->
+    <aside class="call__drawer" id="drawer-notes" aria-label="Consultation notes">
+      <div class="head"><b>Live consult notes <span class="badge badge--warning" style="margin-left:8px">AI drafting</span></b><button class="ctrl" data-close-drawer style="width:36px;height:36px" aria-label="Close notes"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button></div>
+      <div class="msgs scroll-y" style="gap:14px">
+        <div class="cmsg"><b>Symptoms (heard)</b>Improved exercise tolerance · occasional palpitations · sleep normal</div>
+        <div class="cmsg"><b>Vitals on file</b>SpO₂ 97% · Pulse 76 bpm · BP 118/78 · 18/09 OxyGo</div>
+        <div class="cmsg"><b>Suggested plan</b>Continue Metoprolol 25 mg BD · reduce caffeine · review ECG in 4 weeks</div>
+      </div>
+      <div class="foot"><a class="btn btn--primary btn--block" href="#/summary"><svg class="icon" aria-hidden="true"><use href="#i-edit-2"/></svg> Open full summary editor</a></div>
+    </aside>
+  </div>
+</section>

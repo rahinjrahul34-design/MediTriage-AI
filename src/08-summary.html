@@ -1,0 +1,96 @@
+      <!-- ============ CONSULTATION SUMMARY EDITOR (doctor) ============ -->
+      <section class="screen" id="screen-summary" aria-label="Consultation summary editor">
+        <div class="page-title">
+          <div>
+            <h1>Consultation summary</h1>
+            <p>Case MT-420815 · Kavita Deshmukh (45/F) · Cardiology video follow-up · 24/09/2026, 6:00 PM</p>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center">
+            <span class="badge badge--warning badge--lg"><svg class="icon" aria-hidden="true"><use href="#i-zap"/></svg> AI draft — needs your review</span>
+            <span class="avatar avatar--md"><img src="assets/img/doctor-rohan.jpg" alt="You are reviewing as Dr. Rohan Mehta"></span>
+          </div>
+        </div>
+
+        <div class="summary-grid">
+          <div style="display:grid;gap:24px;align-content:start">
+            <div class="field-warn">
+              <svg class="icon" aria-hidden="true"><use href="#i-alert-triangle"/></svg>
+              <span><b>2 items need attention:</b> drug-allergy field is empty — confirm with patient before prescribing. Family history of heart disease not yet recorded.</span>
+            </div>
+
+            <div class="editor">
+              <div class="editor__toolbar" role="toolbar" aria-label="Editor formatting">
+                <button class="iconbtn" data-cmd="bold" type="button" aria-label="Bold"><b style="font-family:var(--font-display)">B</b></button>
+                <button class="iconbtn" data-cmd="italic" type="button" aria-label="Italic"><i style="font-family:Georgia,serif">I</i></button>
+                <button class="iconbtn" data-cmd="ul" type="button" aria-label="Bullet list"><svg class="icon" style="--icon-sz:17px" aria-hidden="true"><use href="#i-menu"/></svg></button>
+                <span style="flex:1"></span>
+                <span class="muted" style="font-size:var(--fs-12);align-self:center">Autosaved 09:58 · changes tracked</span>
+              </div>
+              <div class="editor__area" id="editor-area" contenteditable="true" role="textbox" aria-multiline="true" aria-label="Consultation summary text">
+                <h3>Subjective</h3>
+                <p>45-year-old female, known borderline hypertension, presents for follow-up of palpitations reported on 21/09. Reports <b>improved exercise tolerance</b> this week; occasional palpitations in the evening, lasting under a minute. Sleep normal, appetite normal. No chest pain, syncope, or breathlessness at rest.</p>
+                <h3>Objective</h3>
+                <ul>
+                  <li>SpO₂ 97% (OxyGo, 24/09) · Pulse 76 bpm, regular</li>
+                  <li>BP 118/78 mmHg (home log, average of 6 readings)</li>
+                  <li>ECG from 24/09: sinus rhythm, no ectopics noted on strip shared</li>
+                </ul>
+                <h3>Assessment</h3>
+                <p>Benign palpitations, likely stress/caffeine related, on background of borderline hypertension. No red flags on today’s evaluation.</p>
+                <h3>Plan</h3>
+                <ul>
+                  <li>Continue Metoprolol 25 mg twice daily × 30 days</li>
+                  <li>Reduce caffeine to 1 cup/day; 30-minute daily walk</li>
+                  <li>Twice-daily pulse &amp; SpO₂ logging via OxyGo — shared to this chart</li>
+                  <li>Review in 4 weeks, sooner if symptoms recur</li>
+                </ul>
+              </div>
+            </div>
+
+            <div style="display:flex;gap:12px;flex-wrap:wrap">
+              <button class="btn btn--secondary" id="save-draft" type="button"><svg class="icon" aria-hidden="true"><use href="#i-folder"/></svg> <span data-i18n="action.save">Save</span> draft</button>
+              <button class="btn btn--primary" id="approve-sign" type="button"><svg class="icon" aria-hidden="true"><use href="#i-shield-check"/></svg> Approve &amp; digitally sign</button>
+            </div>
+          </div>
+
+          <div style="display:grid;gap:24px;align-content:start">
+            <section class="card card--pad">
+              <div class="card__title"><h3>Extracted from call</h3><span class="badge badge--info">AI · 96% match</span></div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap">
+                <span class="chip chip--static" style="background:var(--green-100);border-color:#CBE5CE;color:var(--green-700)"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Improved exercise tolerance</span>
+                <span class="chip chip--static" style="background:var(--green-100);border-color:#CBE5CE;color:var(--green-700)"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Occasional palpitations</span>
+                <span class="chip chip--static" style="background:var(--green-100);border-color:#CBE5CE;color:var(--green-700)"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Sleep normal</span>
+                <span class="chip chip--static" style="background:var(--surface-2)">Caffeine 3 cups/day</span>
+              </div>
+              <hr class="hairline" style="margin:16px 0">
+              <div class="small-caps" style="margin-bottom:10px">Vitals referenced</div>
+              <div class="vitals-mini">
+                <div class="vital-mini"><b>97%</b><span>SpO₂</span></div>
+                <div class="vital-mini"><b>76</b><span>Pulse</span></div>
+                <div class="vital-mini"><b>118/78</b><span>BP</span></div>
+              </div>
+            </section>
+
+            <section class="card card--pad">
+              <div class="card__title"><h3>e-Prescription</h3><button class="btn btn--soft btn--sm" id="add-rx" type="button"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg> Add medicine</button></div>
+              <table class="rx-table" aria-label="Prescription medicines">
+                <thead><tr><th>Medicine</th><th>Dose</th><th>Freq.</th><th>Duration</th><th></th></tr></thead>
+                <tbody id="rx-body">
+                  <tr><td><input value="Metoprolol"></td><td><input value="25 mg"></td><td><input value="1-0-1"></td><td><input value="30 days"></td><td><button class="iconbtn rx-del" aria-label="Remove Metoprolol"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-x"/></svg></button></td></tr>
+                  <tr><td><input value="Pantoprazole"></td><td><input value="40 mg"></td><td><input value="1-0-0"></td><td><input value="15 days"></td><td><button class="iconbtn rx-del" aria-label="Remove Pantoprazole"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-x"/></svg></button></td></tr>
+                </tbody>
+              </table>
+              <p class="muted" style="font-size:var(--fs-12);margin-top:10px"><svg class="icon icon--sm" style="vertical-align:-3px" aria-hidden="true"><use href="#i-info"/></svg> Interaction check: no conflicts with patient’s current medicines.</p>
+            </section>
+
+            <section class="card card--pad" style="background:linear-gradient(150deg,var(--blue-50),var(--teal-50));border-color:var(--blue-100)">
+              <div class="card__title"><h3>On signing, the patient gets</h3></div>
+              <ul style="display:grid;gap:10px;font-size:var(--fs-14)" role="list">
+                <li style="display:flex;gap:10px"><svg class="icon" style="color:var(--green-600);--icon-sz:18px" aria-hidden="true"><use href="#i-check-circle"/></svg> Signed summary + Rx in her timeline (ABHA locker)</li>
+                <li style="display:flex;gap:10px"><svg class="icon" style="color:var(--green-600);--icon-sz:18px" aria-hidden="true"><use href="#i-check-circle"/></svg> WhatsApp + SMS in her chosen language</li>
+                <li style="display:flex;gap:10px"><svg class="icon" style="color:var(--green-600);--icon-sz:18px" aria-hidden="true"><use href="#i-check-circle"/></svg> Follow-up reminder auto-set for 4 weeks</li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </section>

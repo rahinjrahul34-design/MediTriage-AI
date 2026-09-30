@@ -1,0 +1,96 @@
+      <!-- ============ PATIENT DASHBOARD ============ -->
+      <section class="screen" id="screen-home" aria-label="Patient dashboard">
+
+        <div class="dash-hero">
+          <div style="position:relative;z-index:1">
+            <p style="color:#9FC6DF;font-size:var(--fs-14);font-weight:600" id="home-date">Wednesday, 30 September 2026</p>
+            <h1 style="margin-top:8px" lang="hi">नमस्ते, कविता 🙏</h1>
+            <p>How are you feeling today? Describe your symptoms by voice or text — I’ll guide you to the right care in your language.</p>
+            <div style="display:flex;gap:12px;flex-wrap:wrap">
+              <a class="btn btn--amber btn--lg" href="#/assistant"><svg class="icon" aria-hidden="true"><use href="#i-mic"/></svg> <span data-i18n="action.startTriage">Start AI Triage</span></a>
+              <a class="btn btn--lg" style="background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.35)" href="#/doctors"><svg class="icon" aria-hidden="true"><use href="#i-stethoscope"/></svg> <span data-i18n="action.findDoctor">Find a Doctor</span></a>
+            </div>
+            <span class="lang-hint"><span lang="hi">माइक दबाकर बोलें — हिन्दी / मराठी / English</span> · <span lang="mr">माइक दाबा आणि बोला</span></span>
+          </div>
+          <div class="hide-m" style="position:relative;z-index:1">
+            <div class="card" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.22);backdrop-filter:blur(8px);padding:20px;color:#fff">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+                <b>Next appointment</b>
+                <span class="badge" style="background:rgba(255,255,255,.16);color:#fff"><svg class="icon" aria-hidden="true"><use href="#i-video"/></svg> Video</span>
+              </div>
+              <div style="display:flex;gap:12px;align-items:center;margin-bottom:16px">
+                <span class="avatar avatar--md"><img src="assets/img/doctor-rohan.jpg" alt="Dr. Rohan Mehta"></span>
+                <div><b style="color:#fff">Dr. Rohan Mehta</b><div style="font-size:var(--fs-13,13px);color:#CFE7F5">Cardiology · Tomorrow 6:00 PM</div></div>
+              </div>
+              <a class="btn btn--block" style="background:#fff;color:var(--blue-800)" href="#/call"><svg class="icon" aria-hidden="true"><use href="#i-video"/></svg> <span data-i18n="action.joinCall">Join Video Call</span></a>
+              <p style="font-size:var(--fs-11);color:#9FC6DF;margin-top:10px;text-align:center">Join opens 10 min before · <span id="home-ics" style="text-decoration:underline;cursor:pointer">Add to calendar</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-grid">
+          <!-- Quick actions -->
+          <a href="#/assistant" class="card card--hover quick-card col-4" style="text-decoration:none">
+            <span class="tile tile--blue"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg></span>
+            <h3>New AI Triage</h3>
+            <p>Voice-first symptom check with explainable results in 3 languages.</p>
+            <span class="go">Start now <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+          </a>
+          <a href="#/doctors" class="card card--hover quick-card col-4" style="text-decoration:none">
+            <span class="tile tile--teal"><svg class="icon" aria-hidden="true"><use href="#i-stethoscope"/></svg></span>
+            <h3>Find Doctors</h3>
+            <p>2,400+ verified specialists. Filter by language, rating &amp; distance.</p>
+            <span class="go">Search doctors <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+          </a>
+          <a href="#/records" class="card card--hover quick-card col-4" style="text-decoration:none">
+            <span class="tile tile--violet"><svg class="icon" aria-hidden="true"><use href="#i-folder"/></svg></span>
+            <h3>My Records</h3>
+            <p>Consult notes, prescriptions &amp; lab reports — ABHA linked.</p>
+            <span class="go" data-i18n="action.viewAll">View all <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+          </a>
+
+          <!-- Vitals snapshot -->
+          <section class="card card--pad col-6" aria-label="Latest vitals">
+            <div class="card__title"><h3>Latest vitals</h3><a href="#/vitals" class="muted" style="font-size:var(--fs-14);font-weight:600">OxyGo · 2 min ago</a></div>
+            <div class="vitals-mini">
+              <div class="vital-mini"><svg class="icon" style="color:var(--blue-600)" aria-hidden="true"><use href="#i-droplet"/></svg><b>97%</b><span>SpO₂</span></div>
+              <div class="vital-mini"><svg class="icon" style="color:var(--red-500)" aria-hidden="true"><use href="#i-heart"/></svg><b>76<small style="font-size:11px"> bpm</small></b><span>Pulse</span></div>
+              <div class="vital-mini"><svg class="icon" style="color:var(--green-600)" aria-hidden="true"><use href="#i-activity"/></svg><b>118/78</b><span>BP mmHg</span></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;margin-top:16px">
+              <span class="badge badge--success"><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg> All in normal range</span>
+              <span class="badge badge--neutral cached-badge">Saved copy — viewable offline</span>
+            </div>
+          </section>
+
+          <!-- Recent records -->
+          <section class="card card--pad col-6" aria-label="Recent records">
+            <div class="card__title"><h3>Recent records</h3><a href="#/records" class="btn btn--ghost btn--sm" data-i18n="action.viewAll">View all</a></div>
+            <div class="record-row"><span class="tile tile--blue"><svg class="icon" aria-hidden="true"><use href="#i-file-text"/></svg></span><div style="flex:1"><b style="font-size:var(--fs-14)">Consult summary · Dr. Mehta</b><div class="muted" style="font-size:var(--fs-12)">Cardiology follow-up · 24/09/2026</div></div><span class="badge badge--success"><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg> Verified</span></div>
+            <div class="record-row"><span class="tile tile--amber"><svg class="icon" aria-hidden="true"><use href="#i-pill"/></svg></span><div style="flex:1"><b style="font-size:var(--fs-14)">e-Prescription · Metoprolol 25 mg</b><div class="muted" style="font-size:var(--fs-12)">30 days · 24/09/2026</div></div><button class="iconbtn" aria-label="Download prescription"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></button></div>
+            <div class="record-row"><span class="tile tile--teal"><svg class="icon" aria-hidden="true"><use href="#i-activity"/></svg></span><div style="flex:1"><b style="font-size:var(--fs-14)">CBC lab report</b><div class="muted" style="font-size:var(--fs-12)">Metropolis Labs · 02/09/2026</div></div><button class="iconbtn" aria-label="Download lab report"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></button></div>
+          </section>
+
+          <!-- Health tip -->
+          <section class="card col-4 card--pad" style="background:linear-gradient(150deg,#FFF8E6,#FFEFC4);border-color:#F3DFA9" aria-label="Health tip">
+            <div class="card__title"><h3>Monsoon health tip</h3><span class="tile tile--amber" style="width:36px;height:36px"><svg class="icon" aria-hidden="true"><use href="#i-zap"/></svg></span></div>
+            <p style="font-size:var(--fs-14);line-height:1.65;color:#5B4300">Viral fevers peak after the rains. Sip warm water, avoid outside cut fruit, and rest at the first sign of body ache.</p>
+            <a href="#/assistant" style="font-weight:700;color:#8A5B00;font-size:var(--fs-14)">Feeling feverish? Check now →</a>
+          </section>
+
+          <!-- Reminders -->
+          <section class="card card--pad col-4" aria-label="Reminders">
+            <div class="card__title"><h3>Today’s reminders</h3><span class="badge badge--info">2 left</span></div>
+            <div class="record-row"><span class="tile tile--green" style="width:36px;height:36px"><svg class="icon" aria-hidden="true"><use href="#i-pill"/></svg></span><div style="flex:1"><b style="font-size:var(--fs-14)">Metoprolol 25 mg</b><div class="muted" style="font-size:var(--fs-12)">Evening · 8:00 PM after food</div></div><span class="badge badge--neutral">8:00 PM</span></div>
+            <div class="record-row"><span class="tile tile--blue" style="width:36px;height:36px"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></span><div style="flex:1"><b style="font-size:var(--fs-14)">Log pulse with OxyGo</b><div class="muted" style="font-size:var(--fs-12)">Doctor asked for 2× daily</div></div><a class="btn btn--secondary btn--sm" href="#/vitals">Log</a></div>
+          </section>
+
+          <!-- Offline queue (shown only while offline) -->
+          <section class="card card--pad col-4 offline-only" aria-label="Offline sync queue">
+            <div class="card__title"><h3><svg class="icon icon--sm" style="color:#8A5B00;vertical-align:-3px" aria-hidden="true"><use href="#i-wifi-off"/></svg> Offline queue</h3><span class="badge badge--warning">1 pending</span></div>
+            <p style="font-size:var(--fs-14);color:var(--text-muted);line-height:1.6">1 triage form saved on this device will be sent automatically when you’re back online.</p>
+            <div class="meter meter--amber" style="margin-top:12px"><span style="width:38%"></span></div>
+            <p class="muted" style="font-size:var(--fs-12);margin-top:8px">Waiting for connection…</p>
+          </section>
+        </div>
+      </section>

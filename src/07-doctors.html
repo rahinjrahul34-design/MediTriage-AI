@@ -1,0 +1,109 @@
+      <!-- ============ DOCTOR SEARCH + MAP ============ -->
+      <section class="screen" id="screen-doctors" aria-label="Find doctors">
+        <div class="page-title">
+          <div>
+            <h1 data-i18n="nav.doctors">Find Doctors</h1>
+            <p>Verified clinicians near Pune, MH · updated just now</p>
+          </div>
+          <button class="btn btn--secondary" id="doc-more-filters" type="button"><svg class="icon" aria-hidden="true"><use href="#i-sliders"/></svg> All filters</button>
+        </div>
+
+        <div class="header-search" style="max-width:none;display:block;margin-bottom:4px">
+          <div class="input-wrap">
+            <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+            <input class="input" id="doc-search" data-i18n-attr="placeholder" data-i18n="search.placeholder" placeholder="Search by specialty or location" aria-label="Search doctors">
+          </div>
+        </div>
+
+        <div class="finder-filters" role="toolbar" aria-label="Specialty filters" id="spec-chips">
+          <button class="chip is-active" data-spec="All" aria-pressed="true" type="button">All</button>
+          <button class="chip" data-spec="General Medicine" aria-pressed="false" type="button">General Medicine</button>
+          <button class="chip" data-spec="Cardiology" aria-pressed="false" type="button">Cardiology</button>
+          <button class="chip" data-spec="Pediatrics" aria-pressed="false" type="button">Pediatrics</button>
+          <button class="chip" data-spec="Dermatology" aria-pressed="false" type="button">Dermatology</button>
+          <button class="chip" data-spec="Orthopedics" aria-pressed="false" type="button">Orthopedics</button>
+          <button class="chip" data-spec="Gynecology" aria-pressed="false" type="button">Gynecology</button>
+        </div>
+        <div class="finder-filters" style="margin-top:0" id="mode-chips" role="toolbar" aria-label="More filters">
+          <button class="chip" data-mode="video" aria-pressed="false" type="button"><svg class="icon" aria-hidden="true"><use href="#i-video"/></svg> Video consult</button>
+          <button class="chip" data-mode="person" aria-pressed="false" type="button"><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg> In-person</button>
+          <button class="chip" data-mode="today" aria-pressed="false" type="button"><svg class="icon" aria-hidden="true"><use href="#i-zap"/></svg> Available today</button>
+          <span style="flex:1"></span>
+          <label class="sr-only" for="sort-sel">Sort doctors</label>
+          <select class="select" id="sort-sel" style="width:auto;padding:9px 40px 9px 14px;font-size:var(--fs-14);min-height:36px">
+            <option value="reco">Recommended</option>
+            <option value="near">Nearest first</option>
+            <option value="top">Top rated</option>
+            <option value="fee">Fee: low to high</option>
+          </select>
+        </div>
+
+        <div class="finder">
+          <div>
+            <p class="muted" id="result-count" style="font-size:var(--fs-14);margin-bottom:14px" role="status">6 doctors available</p>
+            <div class="doc-list" id="doc-list" aria-label="Doctor results"></div>
+          </div>
+
+          <div class="map-panel" aria-label="Map of available doctors">
+            <svg viewBox="0 0 400 300" role="img" aria-label="Stylised map of Pune with doctor location pins">
+              <rect width="400" height="300" fill="#E8F1F4"/>
+              <!-- river -->
+              <path d="M-10 232 C60 210 90 260 160 244 S 300 200 340 236 S 420 250 430 240 L 430 320 L -10 320 Z" fill="#C7E3F2"/>
+              <path d="M-10 236 C60 214 90 264 160 248 S 300 204 340 240" fill="none" stroke="#A9D3E8" stroke-width="2"/>
+              <!-- park -->
+              <rect x="36" y="36" width="86" height="58" rx="14" fill="#CDE8D0"/>
+              <circle cx="300" cy="70" r="34" fill="#CDE8D0"/>
+              <!-- city blocks -->
+              <g fill="#F3F8FA"><rect x="140" y="40" width="52" height="40" rx="8"/><rect x="140" y="100" width="52" height="34" rx="8"/><rect x="300" y="120" width="60" height="44" rx="8"/></g>
+              <!-- roads -->
+              <g stroke="#FFFFFF" stroke-width="10" stroke-linecap="round">
+                <path d="M-6 150 C80 140 200 160 406 130"/>
+                <path d="M60 -6 C70 80 54 200 74 306"/>
+                <path d="M-6 60 C120 84 260 60 406 84"/>
+                <path d="M210 -6 C200 90 216 200 206 306"/>
+                <path d="M300 -6 C306 60 296 120 306 200"/>
+              </g>
+              <g stroke="#D4E2E8" stroke-width="2" stroke-dasharray="7 9">
+                <path d="M-6 150 C80 140 200 160 406 130"/>
+                <path d="M60 -6 C70 80 54 200 74 306"/>
+                <path d="M-6 60 C120 84 260 60 406 84"/>
+                <path d="M210 -6 C200 90 216 200 206 306"/>
+              </g>
+              <!-- you are here -->
+              <g transform="translate(44%, 46%)">
+                <circle r="15" fill="rgba(76,175,80,.22)"><animate attributeName="r" values="10;20;10" dur="3s" repeatCount="indefinite"/></circle>
+                <circle r="9" fill="#4CAF50" stroke="#fff" stroke-width="3"/>
+                <text y="30" text-anchor="middle" font-size="11" font-weight="700" fill="#2E7D32">You</text>
+              </g>
+              <g id="map-pins"></g>
+            </svg>
+            <div class="map-hint"><svg class="icon" style="--icon-sz:13px;vertical-align:-2px" aria-hidden="true"><use href="#i-refresh-cw"/></svg> Live availability · 1 min ago</div>
+            <div class="map-legend">
+              <div style="display:flex;gap:8px;align-items:center;margin-bottom:5px"><span style="width:12px;height:12px;border-radius:50%;background:var(--green-500)"></span> You (Shivajinagar)</div>
+              <div style="display:flex;gap:8px;align-items:center"><span style="width:12px;height:12px;border-radius:50%;background:var(--blue-600)"></span> Clinics &amp; online doctors</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ DOCTOR PROFILE (rendered from data) ============ -->
+      <section class="screen" id="screen-doctor" aria-label="Doctor profile and availability">
+        <a class="back" href="#/doctors" style="display:inline-flex;align-items:center;gap:6px;color:var(--text-muted);font-size:var(--fs-14);font-weight:600;margin-bottom:18px"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-left"/></svg> <span data-i18n="nav.doctors">Find Doctors</span></a>
+        <div id="dp-root"></div>
+      </section>
+
+      <!-- ============ BOOKING FLOW ============ -->
+      <section class="screen" id="screen-book" aria-label="Book appointment">
+        <div class="booking">
+          <div class="page-title"><div><h1 data-i18n="action.book">Book Appointment</h1><p>Three quick steps — your slot is locked once you pick it.</p></div></div>
+          <div id="book-root"></div>
+        </div>
+      </section>
+
+      <section class="screen" id="screen-booking-success" aria-label="Booking confirmed">
+        <div id="bs-root" style="padding-top:20px"></div>
+      </section>
+
+      <section class="screen" id="screen-booking-conflict" aria-label="Slot unavailable">
+        <div id="bc-root" style="padding-top:20px"></div>
+      </section>

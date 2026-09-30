@@ -1,0 +1,161 @@
+      <!-- ============ VITALS (IoT dashboard) ============ -->
+      <section class="screen" id="screen-vitals" aria-label="Vitals dashboard">
+        <div class="device-banner">
+          <span class="tile" style="background:rgba(255,255,255,.14);width:52px;height:52px"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-activity"/></svg></span>
+          <div>
+            <b style="font-size:var(--fs-18);font-family:var(--font-display)">OxyGo Ring Oximeter</b>
+            <div style="font-size:var(--fs-13,13px);color:#BCE0F2">Connected via Bluetooth · battery 82% · Kavita’s device</div>
+          </div>
+          <span class="sync"><svg class="icon" aria-hidden="true"><use href="#i-refresh-cw"/></svg> Syncing · last 30/09/2026, 09:10</span>
+        </div>
+
+        <div class="vitals-grid">
+          <div class="card vital-card">
+            <div class="small-caps">Blood oxygen (SpO₂)</div>
+            <div class="radial" role="img" aria-label="SpO2 97 percent, normal">
+              <svg width="148" height="148" viewBox="0 0 148 148">
+                <circle class="track" cx="74" cy="74" r="60" fill="none" stroke-width="12"/>
+                <circle id="spo2-ring" class="value" cx="74" cy="74" r="60" fill="none" stroke-width="12" style="stroke:#4CAF50" stroke-dasharray="377" stroke-dashoffset="377"/>
+              </svg>
+              <div class="radial__label"><div><b style="font-size:30px;font-family:var(--font-display);color:var(--text)">97<small style="font-size:14px">%</small></b><div class="state" style="color:var(--green-700)">Normal</div></div></div>
+            </div>
+            <p class="muted" style="font-size:var(--fs-12)">7-day avg 96.8% · range 95–98%</p>
+          </div>
+
+          <div class="card vital-card">
+            <div class="small-caps">Heart rate</div>
+            <svg class="ecg-line" width="190" height="74" viewBox="0 0 190 74" role="img" aria-label="Live heart rhythm, 76 beats per minute">
+              <path d="M0 40 H30 l6-8 7 14 6-30 7 44 6-24 5 4 H95 l6-8 7 14 6-30 7 44 6-24 5 4 H160 l6-8 6 8 H190" fill="none" stroke="#F44336" stroke-width="2.4" stroke-linecap="round"/>
+            </svg>
+            <div class="val">76 <small>bpm</small></div>
+            <div class="state" style="color:var(--green-700)">Resting · normal</div>
+            <p class="muted" style="font-size:var(--fs-12)">Resting avg 74 · high 118 (walk)</p>
+          </div>
+
+          <div class="card vital-card">
+            <div class="small-caps">Blood pressure</div>
+            <div class="val" style="margin-top:18px">118/78 <small>mmHg</small></div>
+            <div class="state" style="color:var(--green-700)">Normal</div>
+            <div style="display:flex;gap:8px;margin-top:14px" aria-hidden="true">
+              <span style="height:8px;flex:1;border-radius:6px;background:var(--green-100)"></span>
+              <span style="height:8px;flex:1;border-radius:6px;background:var(--green-500)"></span>
+              <span style="height:8px;flex:1;border-radius:6px;background:var(--amber-100)"></span>
+              <span style="height:8px;flex:1;border-radius:6px;background:var(--red-100)"></span>
+            </div>
+            <p class="muted" style="font-size:var(--fs-12)">BP Sure cuff · yesterday 08:12</p>
+          </div>
+
+          <div class="card vital-card">
+            <span class="tile tile--amber" style="justify-self:center"><svg class="icon" aria-hidden="true"><use href="#i-thermometer"/></svg></span>
+            <div class="small-caps">Temperature</div>
+            <div class="val">98.2 <small>°F</small></div>
+            <div class="state" style="color:var(--green-700)">No fever</div>
+            <p class="muted" style="font-size:var(--fs-12)">ThermoScan · today 07:58</p>
+          </div>
+
+          <div class="card vital-card">
+            <span class="tile tile--teal" style="justify-self:center"><svg class="icon" aria-hidden="true"><use href="#i-wind"/></svg></span>
+            <div class="small-caps">Respiratory rate</div>
+            <div class="val">14 <small>/min</small></div>
+            <div class="state" style="color:var(--green-700)">Normal</div>
+            <p class="muted" style="font-size:var(--fs-12)">Derived from SpO₂ sensor</p>
+          </div>
+
+          <div class="card vital-card">
+            <span class="tile tile--violet" style="justify-self:center"><svg class="icon" aria-hidden="true"><use href="#i-zap"/></svg></span>
+            <div class="small-caps">Steps today</div>
+            <div class="val">3,214</div>
+            <div class="state" style="color:#8A5B00">Goal 6,000 · 54%</div>
+            <div class="meter meter--amber" style="width:100%"><span style="width:54%"></span></div>
+          </div>
+        </div>
+
+        <div class="dash-grid" style="margin-top:24px">
+          <section class="card card--pad col-6">
+            <div class="card__title"><h3>SpO₂ · 7-day trend</h3><span class="badge badge--success">Stable</span></div>
+            <svg viewBox="0 0 520 130" role="img" aria-label="Seven day SpO2 trend, stable around 97 percent" style="width:100%;height:auto">
+              <g stroke="var(--border)" stroke-dasharray="3 5"><line x1="30" x2="510" y1="30" y2="30"/><line x1="30" x2="510" y1="65" y2="65"/><line x1="30" x2="510" y1="100" y2="100"/></g>
+              <g fill="var(--text-muted)" font-size="10"><text x="2" y="33">99</text><text x="2" y="68">97</text><text x="2" y="103">95</text></g>
+              <path d="M40 62 L118 70 L196 66 L274 74 L352 58 L430 66 L500 52" fill="none" stroke="#268DD1" stroke-width="3" stroke-linecap="round"/>
+              <g fill="#268DD1"><circle cx="40" cy="62" r="4"/><circle cx="118" cy="70" r="4"/><circle cx="196" cy="66" r="4"/><circle cx="274" cy="74" r="4"/><circle cx="352" cy="58" r="4"/><circle cx="430" cy="66" r="4"/><circle cx="500" cy="52" r="5" stroke="#fff" stroke-width="2"/></g>
+              <g fill="var(--text-muted)" font-size="10" text-anchor="middle"><text x="40" y="122">24/9</text><text x="118" y="122">25/9</text><text x="196" y="122">26/9</text><text x="274" y="122">27/9</text><text x="352" y="122">28/9</text><text x="430" y="122">29/9</text><text x="500" y="122">30/9</text></g>
+            </svg>
+          </section>
+          <section class="card card--pad col-6">
+            <div class="card__title"><h3>Sharing &amp; alerts</h3></div>
+            <label class="check" style="margin-bottom:14px"><input type="checkbox" checked><span class="box"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span><span style="font-size:var(--fs-14)"><b>Share readings with Dr. Mehta</b><br><span class="muted">Live during consults · weekly digest otherwise</span></span></label>
+            <label class="check" style="margin-bottom:14px"><input type="checkbox" checked><span class="box"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span><span style="font-size:var(--fs-14)"><b>Alert me if SpO₂ &lt; 94%</b><br><span class="muted">Push + SMS to you and one family member</span></span></label>
+            <label class="check"><input type="checkbox"><span class="box"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span><span style="font-size:var(--fs-14)"><b>Weekly report to family</b><br><span class="muted">WhatsApp summary every Sunday, 7 PM</span></span></label>
+            <hr class="hairline" style="margin:16px 0">
+            <button class="btn btn--secondary btn--block" onclick="alert('Pairing flow: keep the device near this phone with Bluetooth on.')"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg> Pair another device</button>
+          </section>
+        </div>
+      </section>
+
+      <!-- ============ ADMIN ANALYTICS ============ -->
+      <section class="screen" id="screen-admin" aria-label="Platform analytics">
+        <div class="page-title">
+          <div>
+            <h1>Platform analytics</h1>
+            <p>Network health across 28 states · refreshed 5 min ago</p>
+          </div>
+          <select class="select" style="width:auto;padding:10px 40px 10px 16px" aria-label="Date range">
+            <option>Last 30 days</option><option>Last 7 days</option><option>Last quarter</option>
+          </select>
+        </div>
+
+        <div class="stat-grid">
+          <div class="card stat-card"><div class="top"><span class="small-caps">Doctors active</span><span class="tile tile--blue" style="width:38px;height:38px"><svg class="icon" style="--icon-sz:18px" aria-hidden="true"><use href="#i-stethoscope"/></svg></span></div><b>312</b><span class="trend up"><svg class="icon" aria-hidden="true"><use href="#i-trending-up"/></svg> +8.2% vs Aug</span></div>
+          <div class="card stat-card"><div class="top"><span class="small-caps">Consults today</span><span class="tile tile--teal" style="width:38px;height:38px"><svg class="icon" style="--icon-sz:18px" aria-hidden="true"><use href="#i-video"/></svg></span></div><b>1,024</b><span class="trend up"><svg class="icon" aria-hidden="true"><use href="#i-trending-up"/></svg> +12.6% vs yesterday</span></div>
+          <div class="card stat-card"><div class="top"><span class="small-caps">New patients (7d)</span><span class="tile tile--green" style="width:38px;height:38px"><svg class="icon" style="--icon-sz:18px" aria-hidden="true"><use href="#i-users"/></svg></span></div><b>4,806</b><span class="trend up"><svg class="icon" aria-hidden="true"><use href="#i-trending-up"/></svg> +5.1% WoW</span></div>
+          <div class="card stat-card"><div class="top"><span class="small-caps">Avg. wait time</span><span class="tile tile--amber" style="width:38px;height:38px"><svg class="icon" style="--icon-sz:18px" aria-hidden="true"><use href="#i-clock"/></svg></span></div><b>6m 20s</b><span class="trend up"><svg class="icon" style="transform:rotate(180deg)" aria-hidden="true"><use href="#i-trending-up"/></svg> −14.0% faster</span></div>
+        </div>
+
+        <div class="chart-grid">
+          <section class="card card--pad">
+            <div class="card__title"><h3>Consultations · last 30 days</h3><span class="badge badge--success"><svg class="icon" aria-hidden="true"><use href="#i-trending-up"/></svg> +18% MoM</span></div>
+            <div id="adm-line"></div>
+            <p class="muted" style="font-size:var(--fs-12);margin-top:8px">Peak: 30 Sep, 1,386 consults · 62% video · 24% voice-first triage conversions</p>
+          </section>
+          <section class="card card--pad" id="adm-donut">
+            <div class="card__title"><h3>Consults by specialty</h3></div>
+            <div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+              <svg width="140" height="140" viewBox="0 0 140 140" role="img" aria-label="Specialty share donut chart"></svg>
+              <ul class="legend" role="list" style="flex:1;min-width:170px"></ul>
+            </div>
+          </section>
+        </div>
+
+        <div class="chart-grid" style="grid-template-columns:1fr 1.6fr">
+          <section class="card card--pad">
+            <div class="card__title"><h3>New signups this week</h3></div>
+            <div id="adm-bars"></div>
+            <p class="muted" style="font-size:var(--fs-12);margin-top:6px">Saturday camp in Satara drove 132 signups.</p>
+          </section>
+          <section class="card card--pad">
+            <div class="card__title"><h3>Latest users</h3><a class="btn btn--ghost btn--sm" href="#/admin">Manage users</a></div>
+            <div style="overflow-x:auto">
+              <table class="admin-table" aria-label="Latest registered users">
+                <thead><tr><th>User</th><th>Role</th><th>Joined</th><th>Status</th></tr></thead>
+                <tbody id="adm-users"></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+  </div><!-- /app-body -->
+
+  <!-- Bottom tab bar (mobile) -->
+  <nav class="tabbar" aria-label="Primary">
+    <a href="#/home" data-nav="home"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg><span data-i18n="nav.home">Home</span></a>
+    <a href="#/doctors" data-nav="doctors"><svg class="icon" aria-hidden="true"><use href="#i-stethoscope"/></svg><span data-i18n="nav.doctors">Doctors</span></a>
+    <div class="fab-wrap">
+      <a class="fab" href="#/assistant" aria-label="Start AI triage by voice"><svg class="icon" aria-hidden="true"><use href="#i-mic"/></svg></a>
+    </div>
+    <a href="#/records" data-nav="records"><svg class="icon" aria-hidden="true"><use href="#i-folder"/></svg><span data-i18n="nav.records">Records</span></a>
+    <button type="button" id="tab-more" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:10.5px;font-weight:600;color:var(--text-muted)">
+      <svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg><span data-i18n="nav.more">More</span>
+    </button>
+  </nav>
+</div><!-- /app-root -->

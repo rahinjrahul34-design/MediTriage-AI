@@ -1,0 +1,27 @@
+%% MediTriage AI — core flow (Mermaid)
+flowchart LR
+    A[Landing] --> B[Login / OTP]
+    B --> C{New user?}
+    C -->|yes| D[Signup · role select]
+    C -->|no| E[Patient dashboard]
+    D --> E
+    E --> F[AI Assistant · voice/text]
+    F --> G[Symptoms confirmed]
+    G --> H[Triage result · explainable]
+    H -->|Routine| H1[Self-care guidance]
+    H -->|Moderate/Urgent| I[Doctor search + map]
+    I --> J[Doctor profile + availability]
+    J --> K[Booking · lock slot]
+    K -->|409 conflict| K1[Offer nearest slots]
+    K1 --> K
+    K --> L[Success + booking ID]
+    L --> M[Waiting room · device check]
+    M --> N[WebRTC video consult]
+    N --> O[AI summary drafted]
+    O --> P[Doctor reviews & signs]
+    P --> Q[Records timeline + e-Rx]
+    Q --> R[Follow-up reminders]
+
+    S[Offline anywhere] -.queue.-> F
+    S -.cached.-> Q
+    F -.sync when online.-> G

@@ -1,0 +1,190 @@
+<!-- ============================================================
+     CHROME PAGES · Landing
+     ============================================================ -->
+<div id="chrome-root">
+<section class="screen page landing" id="screen-landing" aria-label="Landing page">
+
+  <nav class="landing-nav" aria-label="Landing navigation">
+    <a class="brand" href="#/">
+      <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="url(#lgA)"/><defs><linearGradient id="lgA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#268DD1"/><stop offset="1" stop-color="#14527D"/></linearGradient></defs><path d="M20 7c-3.2 5-3.2 9.8 0 14 3.2-4.2 3.2-9 0-14zM8.5 13.5c1.8 6 6.3 9.5 11.4 9.8C18 17.4 13.6 14 8.5 13.5zm23 0c-5.1.5-9.5 3.9-11.4 9.8 5.1-.3 9.6-3.8 11.4-9.8z" fill="#fff"/><path d="M6.5 26.5h7l2.8-4.8 3.4 8 2.8-5.2h11" fill="none" stroke="#FFC107" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="brand__name">Medi<em>Triage</em>&nbsp;<span style="color:var(--blue-600)">AI</span></span>
+    </a>
+    <div class="links">
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#doctors">Doctors</a>
+      <a href="#impact">Impact</a>
+      <a href="styleguide.html">Design system</a>
+    </div>
+    <div class="cta">
+      <div class="segmented segmented--sm" role="group" aria-label="Change language">
+        <button data-lang-btn="en" aria-pressed="true" type="button">EN</button>
+        <button data-lang-btn="hi" aria-pressed="false" lang="hi" type="button">हिं</button>
+        <button data-lang-btn="mr" aria-pressed="false" lang="mr" type="button">मरा</button>
+      </div>
+      <a class="btn btn--ghost btn--sm" href="#/login" data-i18n="action.login">Log in</a>
+      <a class="btn btn--primary btn--sm" href="#/signup" data-i18n="action.getStarted">Get Started</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <svg class="hero__mandala" viewBox="0 0 100 100" aria-hidden="true">
+      <g fill="none" stroke="currentColor" stroke-width=".9">
+        <circle cx="50" cy="50" r="47"/><circle cx="50" cy="50" r="36"/><circle cx="50" cy="50" r="24"/><circle cx="50" cy="50" r="12"/>
+        <g id="petals">
+          <ellipse cx="50" cy="21" rx="7.5" ry="14"/><ellipse cx="50" cy="21" rx="7.5" ry="14" transform="rotate(30 50 50)"/><ellipse cx="50" cy="21" rx="7.5" ry="14" transform="rotate(60 50 50)"/><ellipse cx="50" cy="21" rx="7.5" ry="14" transform="rotate(90 50 50)"/><ellipse cx="50" cy="21" rx="7.5" ry="14" transform="rotate(120 50 50)"/><ellipse cx="50" cy="21" rx="7.5" ry="14" transform="rotate(150 50 50)"/><ellipse cx="50" cy="21" rx="7.5" ry="14" transform="rotate(180 50 50)"/><ellipse cx="50" cy="21" rx="7.5" ry="14" transform="rotate(210 50 50)"/><ellipse cx="50" cy="21" rx="7.5" ry="14" transform="rotate(240 50 50)"/><ellipse cx="50" cy="21" rx="7.5" ry="14" transform="rotate(270 50 50)"/><ellipse cx="50" cy="21" rx="7.5" ry="14" transform="rotate(300 50 50)"/><ellipse cx="50" cy="21" rx="7.5" ry="14" transform="rotate(330 50 50)"/>
+        </g>
+        <path d="M50 3v8M50 89v8M3 50h8M89 50h8"/>
+      </g>
+    </svg>
+    <svg class="hero__mandala two" viewBox="0 0 100 100" aria-hidden="true"><use href="#petals" style="color:inherit" fill="none" stroke="currentColor" stroke-width=".9"/><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width=".9"/><circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" stroke-width=".9"/></svg>
+
+    <div class="hero__copy">
+      <span class="hero__eyebrow rise-in"><span class="dot"></span> AI triage in English · <span lang="hi">हिन्दी</span> · <span lang="mr">मराठी</span></span>
+      <h1 class="rise-in" data-delay="1">Stay home.<br><span class="grad">Consult online.</span></h1>
+      <p class="hero__sub rise-in" data-delay="2" data-i18n="landing.heroSub">Voice-first AI triage in your language, verified doctors, and secure video consultations — built for every Indian household, from metros to the last mile.</p>
+      <div class="hero__tagline-swap rise-in" data-delay="3" aria-live="polite">
+        <svg class="icon" style="--icon-sz:16px" aria-hidden="true"><use href="#i-languages"/></svg>
+        <span class="swap" id="tag-swap">
+          <span>“Stay Home, Consult Online”</span>
+          <span lang="hi">“घर पर रहें, ऑनलाइन सलाह लें”</span>
+          <span lang="mr">“घरात रहा, ऑनलाइन सल्ला घ्या”</span>
+        </span>
+      </div>
+      <div class="hero__ctas rise-in" data-delay="4">
+        <a class="btn btn--primary btn--lg" href="#/assistant"><svg class="icon" aria-hidden="true"><use href="#i-mic"/></svg> <span data-i18n="action.startTriage">Start AI Triage</span></a>
+        <a class="btn btn--secondary btn--lg" href="#/doctors"><svg class="icon" aria-hidden="true"><use href="#i-stethoscope"/></svg> <span data-i18n="action.findDoctor">Find a Doctor</span></a>
+      </div>
+      <div class="hero__proof rise-in" data-delay="4">
+        <div class="stat"><b>2,400+</b><span>verified doctors</span></div>
+        <div class="stat"><b>1.2M+</b><span>consultations</span></div>
+        <div class="stat"><b>4.8 / 5</b><span>patient rating</span></div>
+        <div class="stat"><b>28</b><span>states served</span></div>
+      </div>
+    </div>
+
+    <div class="hero__visual rise-in" data-delay="2">
+      <figure class="hero__photo">
+        <img src="assets/img/hero.jpg" alt="Indian doctor on a secure video consultation with a patient from her clinic" width="640" height="562">
+      </figure>
+      <div class="float-chip float-chip--a">
+        <span class="tile tile--amber"><svg class="icon" aria-hidden="true"><use href="#i-activity"/></svg></span>
+        <span>AI triage complete<small>Urgency: <b style="color:#8A5B00">Moderate</b> · see a doctor in 24h</small></span>
+      </div>
+      <div class="float-chip float-chip--b">
+        <span class="tile tile--green"><svg class="icon" aria-hidden="true"><use href="#i-video"/></svg></span>
+        <span>HD video consult<small><span style="display:inline-flex;align-items:center;gap:5px"><i style="width:7px;height:7px;border-radius:50%;background:var(--green-500);display:inline-block"></i> End-to-end encrypted</span></small></span>
+      </div>
+      <div class="float-chip float-chip--c">
+        <span class="tile tile--blue"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></span>
+        <span>OxyGo synced<small>SpO₂ 97% · Pulse 76 bpm</small></span>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" id="features">
+    <div class="section__head">
+      <span class="kicker">Everything in one calm place</span>
+      <h2>Designed for trust, tuned for India</h2>
+      <p>From the first symptom to the final prescription, MediTriage keeps patients, doctors and records connected — even on a 3G village connection.</p>
+    </div>
+    <div class="features-grid">
+      <article class="feature-card"><span class="tile tile--blue"><svg class="icon" aria-hidden="true"><use href="#i-mic"/></svg></span><h3>Voice-first AI triage</h3><p>Speak naturally in Hindi, Marathi or English. The assistant confirms what it heard, symptom by symptom, before any conclusion.</p></article>
+      <article class="feature-card"><span class="tile tile--amber"><svg class="icon" aria-hidden="true"><use href="#i-activity"/></svg></span><h3>Explainable results</h3><p>Every urgency level shows its working: recognised symptoms, risk factors and plain-language reasoning — never a black box.</p></article>
+      <article class="feature-card"><span class="tile tile--teal"><svg class="icon" aria-hidden="true"><use href="#i-languages"/></svg></span><h3>Truly multilingual</h3><p>UI, voice and notices in multiple Indian languages with Devanagari-tuned typography, dd/mm/yyyy dates and larger touch targets.</p></article>
+      <article class="feature-card"><span class="tile tile--green"><svg class="icon" aria-hidden="true"><use href="#i-shield-check"/></svg></span><h3>Secure video consults</h3><p>WebRTC calls with end-to-end encryption, automatic quality fallback, in-call chat and a waiting-room device check.</p></article>
+      <article class="feature-card"><span class="tile tile--violet"><svg class="icon" aria-hidden="true"><use href="#i-folder"/></svg></span><h3>Records you own</h3><p>Consult summaries, prescriptions and reports in an ABHA-linked timeline, exchanged as FHIR R4 documents with consent audit.</p></article>
+      <article class="feature-card"><span class="tile tile--red"><svg class="icon" aria-hidden="true"><use href="#i-wifi-off"/></svg></span><h3>Offline-first</h3><p>Queue triage and read cached records with zero connectivity. Everything syncs — and tells you when it does.</p></article>
+    </div>
+  </section>
+
+  <section class="section section--tint" id="how">
+    <div class="section" style="padding-top:0;padding-bottom:0">
+      <div class="section__head">
+        <span class="kicker">How it works</span>
+        <h2>Care in four gentle steps</h2>
+      </div>
+      <div class="steps">
+        <article class="step-card"><h3>Say or type symptoms</h3><p>Talk to the assistant like you would to a family doctor — in your language.</p></article>
+        <article class="step-card"><h3>Get clear triage</h3><p>See urgency, recognised symptoms and what to do next — explained simply.</p></article>
+        <article class="step-card"><h3>Book the right doctor</h3><p>Filter by specialty, language and distance. Slots lock instantly against double-booking.</p></article>
+        <article class="step-card"><h3>Consult &amp; recover</h3><p>Join a secure video call; receive a signed summary and prescription in your records.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="impact">
+    <div class="split">
+      <figure class="photo"><img src="assets/img/rural.jpg" alt="Doctor consulting an elderly patient outside a village clinic using a tablet" loading="lazy"></figure>
+      <div>
+        <span class="kicker">Made for Bharat</span>
+        <h2>The last mile is our first priority</h2>
+        <p style="color:var(--text-muted);margin-top:12px;line-height:var(--lh-loose)">Over 65% of India lives outside metros, where the nearest specialist can be a day away. MediTriage brings the first clinical opinion to the phone people already have.</p>
+        <ul class="check-list" role="list">
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg><span><b>Works on 3G &amp; offline</b> — cached records, queued triage, audio-first fallback.</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg><span><b>Accessibility built-in</b> — WCAG AA contrast, keyboard paths, screen-reader labels.</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg><span><b>IoT vitals</b> — BLE oximeters and BP monitors sync straight into the consult.</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg><span><b>Aligned to ABDM</b> — ABHA IDs and India-hosted, consent-driven data exchange.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tint" id="doctors">
+    <div class="section" style="padding-top:0;padding-bottom:0">
+      <div class="section__head">
+        <span class="kicker">Verified clinicians</span>
+        <h2>Doctors patients already love</h2>
+        <p>Every profile is credential-checked with the National Medical Register.</p>
+      </div>
+      <div class="doc-strip">
+        <a class="feature-card card--hover" style="text-decoration:none" href="#/doctor/asha"><img src="assets/img/doctor-asha.jpg" alt="Dr. Ananya Sharma" style="border-radius:14px;aspect-ratio:1/.85;object-fit:cover;margin-bottom:14px"><h3 style="margin:0 0 4px">Dr. Ananya Sharma</h3><p>General Medicine · Pune<br><span style="color:var(--amber-500);font-weight:700">★ 4.9</span> · <span lang="hi">हिन्दी</span>, <span lang="mr">मराठी</span>, EN</p></a>
+        <a class="feature-card card--hover" style="text-decoration:none" href="#/doctor/rohan"><img src="assets/img/doctor-rohan.jpg" alt="Dr. Rohan Mehta" style="border-radius:14px;aspect-ratio:1/.85;object-fit:cover;margin-bottom:14px"><h3 style="margin:0 0 4px">Dr. Rohan Mehta</h3><p>Cardiology · Pune<br><span style="color:var(--amber-500);font-weight:700">★ 4.8</span> · <span lang="hi">हिन्दी</span>, EN</p></a>
+        <a class="feature-card card--hover" style="text-decoration:none" href="#/doctor/priya"><img src="assets/img/doctor-priya.jpg" alt="Dr. Priya Nair" style="border-radius:14px;aspect-ratio:1/.85;object-fit:cover;margin-bottom:14px"><h3 style="margin:0 0 4px">Dr. Priya Nair</h3><p>Pediatrics · Online<br><span style="color:var(--amber-500);font-weight:700">★ 4.9</span> · <span lang="hi">हिन्दी</span>, EN, தமிழ்</p></a>
+        <a class="feature-card card--hover" style="text-decoration:none" href="#/doctor/vikram"><img src="assets/img/doctor-vikram.jpg" alt="Dr. Vikram Kulkarni" style="border-radius:14px;aspect-ratio:1/.85;object-fit:cover;margin-bottom:14px"><h3 style="margin:0 0 4px">Dr. Vikram Kulkarni</h3><p>Orthopedics · Pune<br><span style="color:var(--amber-500);font-weight:700">★ 4.8</span> · <span lang="mr">मराठी</span>, <span lang="hi">हिन्दी</span>, EN</p></a>
+      </div>
+
+      <div style="display:grid;place-items:center;margin-top:56px">
+        <figure class="testimonial" style="max-width:880px">
+          <svg viewBox="0 0 24 24" style="width:34px;fill:#71BDDF;opacity:.7;margin-bottom:14px" aria-hidden="true"><path d="M9.5 8C7 8 5 10 5 12.5S7 17 9.5 17c.4 0 .8-.1 1.1-.2C10 18.6 8.6 19.7 7 20.3l.7 1.7c3.7-1.4 6.3-4.7 6.3-9C14 10.4 12 8 9.5 8zm11 0C18 8 16 10 16 12.5S18 17 20.5 17c.4 0 .8-.1 1.1-.2-.6 1.8-2 2.9-3.6 3.5l.7 1.7c3.7-1.4 6.3-4.7 6.3-9 0-2.6-2-5-4.5-5z"/></svg>
+          <blockquote lang="mr">“गावात डॉक्टरांना दाखवायला आम्हाला जिल्ह्याला जावं लागायचं. आता मी मोबाइलवर माझ्या भाषेत सांगितलं आणि दहाच मिनिटांत डॉक्टरांचा सल्ला मिळाला.”</blockquote>
+          <p style="color:#9FC6DF;margin-top:10px;font-size:var(--fs-14)">“In my village, seeing a doctor meant travelling to the district town. Now I describe my problem in Marathi and get a doctor’s advice in minutes.”</p>
+          <figcaption class="who">
+            <span class="avatar avatar--md"><img src="assets/img/kavita.jpg" alt="Kavita Deshmukh"></span>
+            <span><b>Kavita Deshmukh</b><span>Farmer · Satara district, rural Maharashtra</span></span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="cta-band">
+      <h2>The doctor is in — wherever you are</h2>
+      <p>Free to start. Consults from ₹199. No app download needed for your first visit.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative">
+        <a class="btn btn--amber btn--lg" href="#/signup" style="background:#fff;color:var(--blue-800)"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg> Create free account</a>
+        <a class="btn btn--lg" style="background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.4)" href="#/assistant"><svg class="icon" aria-hidden="true"><use href="#i-mic"/></svg> Try AI triage</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__grid">
+      <div>
+        <a class="brand" href="#/" style="margin-bottom:14px">
+          <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="#1A6FA8"/><path d="M20 7c-3.2 5-3.2 9.8 0 14 3.2-4.2 3.2-9 0-14zM8.5 13.5c1.8 6 6.3 9.5 11.4 9.8C18 17.4 13.6 14 8.5 13.5zm23 0c-5.1.5-9.5 3.9-11.4 9.8 5.1-.3 9.6-3.8 11.4-9.8z" fill="#fff"/><path d="M6.5 26.5h7l2.8-4.8 3.4 8 2.8-5.2h11" fill="none" stroke="#FFC107" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="brand__name" style="color:#fff">Medi<em style="color:#71BDDF">Triage</em> <span style="color:#71BDDF">AI</span></span>
+        </a>
+        <p style="font-size:var(--fs-14);max-width:32ch">AI-assisted telemedicine built for India’s next half-billion patients. Not a substitute for emergency care — in emergencies call <b style="color:#fff">108</b>.</p>
+      </div>
+      <div><h4>Patients</h4><a href="#/assistant">AI symptom triage</a><a href="#/doctors">Find doctors</a><a href="#/records">Health records</a><a href="#/vitals">Connect devices</a></div>
+      <div><h4>Care teams</h4><a href="#/summary">Consult notes</a><a href="#/admin">Analytics</a><a href="#/call">Tele-clinic room</a><a href="#/signup">Join as a doctor</a></div>
+      <div><h4>Company</h4><a href="styleguide.html">Design system</a><a href="handoff/tokens.json">Design tokens</a><a href="#impact">Impact</a><a href="#/login">Sign in</a></div>
+    </div>
+    <div class="fine">
+      <span>© 2026 MediTriage Health Pvt. Ltd. · Pune, India</span>
+      <span>FHIR R4 · ABDM/ABHA ready · Data hosted in India 🇮🇳</span>
+    </div>
+  </footer>
+</section>

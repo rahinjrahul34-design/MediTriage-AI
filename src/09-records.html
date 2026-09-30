@@ -1,0 +1,37 @@
+      <!-- ============ HEALTH RECORDS · TIMELINE ============ -->
+      <section class="screen" id="screen-records" aria-label="Health records timeline">
+        <div class="page-title">
+          <div>
+            <h1 data-i18n="nav.records">Records</h1>
+            <p>Your care journey — consults, triage, vitals &amp; reports in one timeline</p>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <button class="btn btn--secondary" id="rec-share" type="button"><svg class="icon" aria-hidden="true"><use href="#i-share-2"/></svg> <span data-i18n="action.share">Share</span></button>
+            <button class="btn btn--primary" id="rec-bundle" type="button"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> <span data-i18n="action.download">Download</span> all</button>
+          </div>
+        </div>
+
+        <div class="records-layout">
+          <aside style="display:grid;gap:24px;align-content:start">
+            <div class="card card--pad">
+              <div class="card__title"><h3>Filter</h3></div>
+              <div class="filter-list" id="rec-filters" role="group" aria-label="Filter timeline">
+                <button class="is-on" data-f="all" type="button"><svg class="icon" style="--icon-sz:17px" aria-hidden="true"><use href="#i-grid"/></svg> Everything <span class="cnt"></span></button>
+                <button data-f="appointment" type="button"><svg class="icon" style="--icon-sz:17px" aria-hidden="true"><use href="#i-video"/></svg> Consults <span class="cnt"></span></button>
+                <button data-f="triage" type="button"><svg class="icon" style="--icon-sz:17px" aria-hidden="true"><use href="#i-chat"/></svg> AI triage <span class="cnt"></span></button>
+                <button data-f="record" type="button"><svg class="icon" style="--icon-sz:17px" aria-hidden="true"><use href="#i-file-text"/></svg> Reports &amp; notes <span class="cnt"></span></button>
+                <button data-f="vitals" type="button"><svg class="icon" style="--icon-sz:17px" aria-hidden="true"><use href="#i-activity"/></svg> Vitals <span class="cnt"></span></button>
+              </div>
+            </div>
+            <div class="card card--pad" style="background:linear-gradient(150deg,#10334E,#1A6FA8);color:#fff;border:0">
+              <div style="display:flex;gap:12px;align-items:center;margin-bottom:10px">
+                <span class="tile" style="background:rgba(255,255,255,.16);width:40px;height:40px"><svg class="icon" aria-hidden="true"><use href="#i-shield-check"/></svg></span>
+                <b style="color:#fff">ABHA locker linked</b>
+              </div>
+              <p style="font-size:var(--fs-13,13px);color:#C6E2F2;line-height:1.6">Records sync with your Ayushman Bharat health account. You control every share — and can revoke anytime.</p>
+            </div>
+          </aside>
+
+          <div class="timeline" id="rec-list" style="margin-top:6px"></div>
+        </div>
+      </section>

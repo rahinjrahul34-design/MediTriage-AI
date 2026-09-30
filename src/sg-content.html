@@ -1,0 +1,290 @@
+<body class="sg">
+<a class="skip-link" href="#sg-main">Skip to content</a>
+
+<nav class="landing-nav" aria-label="Style guide navigation">
+  <a class="brand" href="index.html#/">
+    <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="url(#lgS)"/><defs><linearGradient id="lgS" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#268DD1"/><stop offset="1" stop-color="#14527D"/></linearGradient></defs><path d="M20 7c-3.2 5-3.2 9.8 0 14 3.2-4.2 3.2-9 0-14zM8.5 13.5c1.8 6 6.3 9.5 11.4 9.8C18 17.4 13.6 14 8.5 13.5zm23 0c-5.1.5-9.5 3.9-11.4 9.8 5.1-.3 9.6-3.8 11.4-9.8z" fill="#fff"/><path d="M6.5 26.5h7l2.8-4.8 3.4 8 2.8-5.2h11" fill="none" stroke="#FFC107" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span class="brand__name">Medi<em>Triage</em> AI</span>
+  </a>
+  <div class="links">
+    <a href="#colors">Colors</a><a href="#type">Type</a><a href="#spacing">Spacing</a><a href="#icons">Icons</a><a href="#components">Components</a><a href="#motion">Motion</a><a href="#a11y">A11y</a><a href="#copy">Copy</a><a href="#flow">Flows</a>
+  </div>
+  <div class="cta">
+    <a class="btn btn--secondary btn--sm" href="handoff/tokens.json"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> tokens.json</a>
+    <a class="btn btn--primary btn--sm" href="index.html#/home"><svg class="icon" aria-hidden="true"><use href="#i-external-link"/></svg> Open prototype</a>
+  </div>
+</nav>
+
+<main id="sg-main">
+  <header class="sg-hero">
+    <span class="kicker">MediTriage AI · Design System v1.0</span>
+    <h1>Calm, trustworthy, <em>Indian-friendly</em> healthcare UI</h1>
+    <p>Tokens, components, motion and copy guidelines powering the MediTriage prototype — WCAG AA, multilingual (EN·हिन्दी·मराठी), offline-aware. Inspired by the NHS Service Standard’s accessibility rigour and the clean blue-white language of leading Indian health platforms.</p>
+    <div class="sg-hero-badges">
+      <span class="badge badge--info badge--lg">14 hi-fi screens</span>
+      <span class="badge badge--info badge--lg">40+ components &amp; variants</span>
+      <span class="badge badge--success badge--lg">WCAG 2.2 AA</span>
+      <a class="badge badge--neutral badge--lg" href="handoff/tokens.json">handoff/tokens.json</a>
+      <a class="badge badge--neutral badge--lg" href="handoff/tailwind.config.js">tailwind.config.js</a>
+      <a class="badge badge--neutral badge--lg" href="handoff/components.md">components.md</a>
+    </div>
+  </header>
+
+  <!-- ============ 01 COLORS ============ -->
+  <section class="sg-sec" id="colors">
+    <h2><span class="sg-num">01</span> Color</h2>
+    <p class="sg-lead">Trust-building blues with a warm marigold accent. Small text on colour always uses the AA-tuned derivative (4.5:1+ against white); the raw brand hue is reserved for large text, icons and graphics (3:1+).</p>
+    <div class="sw-grid">
+      <div class="sw"><i style="background:#268DD1"></i><b>Blue 500</b><code>--blue-500</code><span>#268DD1 · primary brand, large text 3.6:1</span></div>
+      <div class="sw"><i style="background:#1A6FA8"></i><b>Blue 700</b><code>--blue-700</code><span>#1A6FA8 · buttons/links, 5.4:1 on white</span></div>
+      <div class="sw"><i style="background:#71BDDF"></i><b>Teal 300</b><code>--blue-300 / --teal-300</code><span>#71BDDF · highlights, chart 2</span></div>
+      <div class="sw"><i style="background:#14527D"></i><b>Blue 800</b><code>--blue-800</code><span>#14527D · deep surfaces</span></div>
+      <div class="sw"><i style="background:#FFA726"></i><b>Accent</b><code>--accent</code><span>#FFA726 · urgent CTAs (dark text)</span></div>
+      <div class="sw"><i style="background:#FFC107"></i><b>Amber 500</b><code>--amber-500</code><span>#FFC107 · warning state</span></div>
+      <div class="sw"><i style="background:#F4F9FA;border:1px solid var(--border)"></i><b>Background</b><code>--bg</code><span>#F4F9FA · app canvas</span></div>
+      <div class="sw"><i style="background:#B8C3CB"></i><b>Gray</b><code>--border-strong</code><span>#B8C3CB · strong borders</span></div>
+      <div class="sw"><i style="background:#413B4B"></i><b>Body text</b><code>--text-body</code><span>#413B4B · 10.1:1 on white</span></div>
+      <div class="sw"><i style="background:#1B1717"></i><b>Heading text</b><code>--text</code><span>#1B1717 · 14.7:1 on white</span></div>
+      <div class="sw"><i style="background:#4CAF50"></i><b>Success</b><code>--green-500</code><span>#4CAF50 graphics · text: --green-700 #2E7D32</span></div>
+      <div class="sw"><i style="background:#F44336"></i><b>Error</b><code>--red-500</code><span>#F44336 graphics · text: --red-700 #D32F2F</span></div>
+    </div>
+    <div class="sg-note"><b>Never colour alone.</b> Urgency &amp; status always pair colour with an icon and a text label (see Urgency badges), keeping meaning accessible to colour-blind users.</div>
+  </section>
+
+  <!-- ============ 02 TYPE ============ -->
+  <section class="sg-sec" id="type">
+    <h2><span class="sg-num">02</span> Typography</h2>
+    <p class="sg-lead"><b>Poppins</b> for display (its Devanagari companion keeps Hindi/Marathi headlines on-brand), <b>Inter</b> for UI text, <b>Noto Sans Devanagari</b> as script fallback. Base 16 px, 1.5–1.75 line-height (extra for Devanagari), fluid <code>clamp()</code> headings.</p>
+    <div class="type-rows">
+      <div class="type-row"><code>H1 · clamp(30–40px) · 600</code><span style="font-family:var(--font-display);font-weight:600;font-size:var(--fs-40)">India’s calm AI doctor <span lang="hi">स्वास्थ्य सहायक</span></span></div>
+      <div class="type-row"><code>H2 · 28px · 600</code><span style="font-family:var(--font-display);font-weight:600;font-size:var(--fs-28)">Book a consultation <span lang="mr">डॉक्टरांना भेटा</span></span></div>
+      <div class="type-row"><code>H3 · 20px · 600</code><span style="font-family:var(--font-display);font-weight:600;font-size:var(--fs-20)">Dr. Ananya Sharma · General Medicine</span></div>
+      <div class="type-row"><code>Body · 16px · 400 · 1.55</code><span style="font-size:var(--fs-16)">Describe your symptoms by voice or text. The assistant confirms what it heard before any conclusion — <span lang="hi">आपकी भाषा में</span>, in English, <span lang="mr">किंवा मराठीत</span>.</span></div>
+      <div class="type-row"><code>Small · 14px · 500</code><span style="font-size:var(--fs-14)">Video consult · Today, 4:30 PM · ₹399 · 4.9 ★ (1,240 reviews)</span></div>
+      <div class="type-row"><code>Caption · 12px · 600 caps</code><span class="small-caps">Next available slot</span></div>
+    </div>
+  </section>
+
+  <!-- ============ 03 SPACING/GRID ============ -->
+  <section class="sg-sec" id="spacing">
+    <h2><span class="sg-num">03</span> Spacing &amp; grid</h2>
+    <p class="sg-lead">4-px base scale; 24 px card padding on mobile, 32 px on desktop. 12-column desktop grid → 8-column tablet → single column ≤ 640 px, 16 px gutters.</p>
+    <div class="sp-row">
+      <div class="sp"><i style="width:4px"></i><code>sp-1 · 4</code></div>
+      <div class="sp"><i style="width:8px"></i><code>sp-2 · 8</code></div>
+      <div class="sp"><i style="width:12px"></i><code>sp-3 · 12</code></div>
+      <div class="sp"><i style="width:16px"></i><code>sp-4 · 16</code></div>
+      <div class="sp"><i style="width:24px"></i><code>sp-6 · 24</code></div>
+      <div class="sp"><i style="width:32px"></i><code>sp-8 · 32</code></div>
+      <div class="sp"><i style="width:48px"></i><code>sp-12 · 48</code></div>
+      <div class="sp"><i style="width:64px"></i><code>sp-16 · 64</code></div>
+    </div>
+    <table class="sg-table">
+      <tr><th>Breakpoint</th><th>Layout</th><th>Key adaptations</th></tr>
+      <tr><td>≤ 640 px (375 base)</td><td>1 column, tab bar</td><td>Center mic FAB, stacked cards, sheet modals, hidden table columns</td></tr>
+      <tr><td>768 px</td><td>8 columns</td><td>Two-up feature grids, map stacks above list</td></tr>
+      <tr><td>1024 px</td><td>12 columns</td><td>Sidebar navigation, sticky map beside results</td></tr>
+      <tr><td>1440 px</td><td>12 columns, max 1200 px</td><td>Extra breathing room, larger gutters</td></tr>
+    </table>
+  </section>
+
+  <!-- ============ 04 ICONS ============ -->
+  <section class="sg-sec" id="icons">
+    <h2><span class="sg-num">04</span> Iconography</h2>
+    <p class="sg-lead">Single 24×24 set, 2 px rounded stroke, monochrome via <code>currentColor</code>; colour marks status only. Metaphors stay literal: stethoscope = doctor, chat bubble = AI, calendar = appointments, camera = video.</p>
+    <div class="ic-grid" id="ic-grid"></div>
+  </section>
+
+  <!-- ============ 05 COMPONENTS ============ -->
+  <section class="sg-sec" id="components">
+    <h2><span class="sg-num">05</span> Components &amp; variants</h2>
+    <p class="sg-lead">Every component below is live — the same CSS classes ship in the app. Prop annotations follow <code>components.md</code>.</p>
+
+    <h3>Button <code>variant · size · block · loading · disabled</code></h3>
+    <div class="demobox">
+      <button class="btn btn--primary">Primary</button>
+      <button class="btn btn--secondary">Secondary</button>
+      <button class="btn btn--soft">Soft</button>
+      <button class="btn btn--ghost">Ghost</button>
+      <button class="btn btn--amber">Urgent</button>
+      <button class="btn btn--danger">Danger</button>
+      <button class="btn btn--primary is-loading">Loading</button>
+      <button class="btn btn--primary" disabled>Disabled</button>
+      <button class="btn btn--primary btn--sm">Small</button>
+      <button class="btn btn--primary btn--lg">Large</button>
+      <button class="btn btn--secondary btn--icon" aria-label="Settings"><svg class="icon" aria-hidden="true"><use href="#i-settings"/></svg></button>
+    </div>
+
+    <h3>Inputs <code>state: default · focus · error · disabled</code></h3>
+    <div class="demobox" style="align-items:flex-start">
+      <div class="field" style="width:260px"><label class="field__label">Full name</label><input class="input" placeholder="Kavita Deshmukh"></div>
+      <div class="field is-error" style="width:260px"><label class="field__label">Mobile number</label><input class="input" value="98220" aria-invalid="true"><span class="field__error"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-alert-triangle"/></svg> Enter a 10-digit number</span></div>
+      <div class="field" style="width:260px"><label class="field__label">Specialty</label><select class="select"><option>General Medicine</option><option>Cardiology</option></select></div>
+      <label class="check"><input type="checkbox" checked><span class="box"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span><span>Share records with my doctor</span></label>
+      <div class="otp-row"><input class="otp-box" value="4" aria-label="d1"><input class="otp-box" value="2" aria-label="d2"><input class="otp-box" aria-label="d3"><input class="otp-box" aria-label="d4"></div>
+    </div>
+
+    <h3>Chips, badges &amp; urgency</h3>
+    <div class="demobox">
+      <button class="chip is-active" aria-pressed="true">Cardiology</button>
+      <button class="chip" aria-pressed="false">Pediatrics</button>
+      <span class="chip chip--lang chip--static" lang="mr">मराठी</span>
+      <span class="badge badge--success">Verified</span>
+      <span class="badge badge--info">Video</span>
+      <span class="badge badge--warning">Pending KYC</span>
+      <span class="badge badge--error">Failed</span>
+      <span class="urgency urgency--routine"><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg> <span data-i18n="urgency.routine">Routine</span></span>
+      <span class="urgency urgency--moderate"><svg class="icon" aria-hidden="true"><use href="#i-activity"/></svg> <span data-i18n="urgency.moderate">Moderate</span></span>
+      <span class="urgency urgency--urgent"><svg class="icon" aria-hidden="true"><use href="#i-alert-triangle"/></svg> <span data-i18n="urgency.urgent">Urgent</span></span>
+    </div>
+
+    <h3>Cards &amp; list items</h3>
+    <div class="demobox" style="align-items:stretch">
+      <div class="card card--pad card--hover" style="width:280px"><span class="tile tile--blue" style="margin-bottom:12px"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg></span><h3>New AI Triage</h3><p class="muted" style="font-size:var(--fs-14)">Voice-first symptom check with explainable results.</p></div>
+      <div class="card card--pad" style="width:300px"><div class="appt-when" style="float:left;margin-right:14px"><b>01</b><span>OCT</span></div><div><b>Dr. Rohan Mehta</b><div class="muted" style="font-size:var(--fs-14)">Cardiology · 6:00 PM · video</div></div><span class="next-slot" style="margin-top:10px"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg> Confirmed</span></div>
+      <div class="card card--pad" style="width:300px"><div class="skeleton" style="width:60%;height:18px;margin-bottom:12px"></div><div class="skeleton" style="width:90%;margin-bottom:10px"></div><div class="skeleton" style="width:75%"></div></div>
+    </div>
+
+    <h3>Slots <code>available · selected · booked/disabled</code></h3>
+    <div class="demobox">
+      <button class="slot" aria-pressed="false">09:00</button>
+      <button class="slot" aria-pressed="true">09:45</button>
+      <button class="slot" disabled>10:30</button>
+      <button class="slot">16:00</button>
+    </div>
+
+    <h3>Toasts <code>success · info · warning · error</code></h3>
+    <div class="demobox">
+      <button class="btn btn--secondary btn--sm" data-toast="success">Success</button>
+      <button class="btn btn--secondary btn--sm" data-toast="info">Info</button>
+      <button class="btn btn--secondary btn--sm" data-toast="warning">Warning</button>
+      <button class="btn btn--secondary btn--sm" data-toast="error">Error</button>
+    </div>
+
+    <h3>Stepper &amp; tabs</h3>
+    <div class="demobox" style="flex-direction:column;align-items:stretch">
+      <div class="stepper">
+        <span class="step is-done"><span class="n"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg></span><span>Choose slot</span></span><span class="line is-done"></span>
+        <span class="step is-active"><span class="n">2</span><span>Patient details</span></span><span class="line"></span>
+        <span class="step"><span class="n">3</span><span>Review &amp; pay</span></span>
+      </div>
+      <div class="tabs" role="tablist"><button role="tab" aria-selected="true">Overview</button><button role="tab" aria-selected="false">Reviews (1,240)</button><button role="tab" aria-selected="false">Fees</button></div>
+    </div>
+  </section>
+
+  <!-- ============ 06 MOTION ============ -->
+  <section class="sg-sec" id="motion">
+    <h2><span class="sg-num">06</span> Motion</h2>
+    <p class="sg-lead">Snappy, quiet animation: 120–480 ms, no bouncy excess. All looping motion halts under <code>prefers-reduced-motion</code>.</p>
+    <table class="sg-table">
+      <tr><th>Token</th><th>Value</th><th>Used for</th></tr>
+      <tr><td><code>--dur-1</code></td><td>120 ms</td><td>Button press scale (.965), icon hovers</td></tr>
+      <tr><td><code>--dur-2</code></td><td>200 ms</td><td>Colour/elevation hovers, toasts out</td></tr>
+      <tr><td><code>--dur-3</code></td><td>320 ms</td><td>Screen transitions (fade + 10 px rise), drawers</td></tr>
+      <tr><td><code>--dur-4</code></td><td>480 ms</td><td>Tagline swap, success check pop</td></tr>
+      <tr><td><code>--ease-out</code></td><td>cubic-bezier(.2,.8,.2,1)</td><td>Default entrances</td></tr>
+      <tr><td><code>--ease-in-out</code></td><td>cubic-bezier(.65,.05,.36,1)</td><td>Lateral page/drawer moves</td></tr>
+      <tr><td><code>--ease-spring</code></td><td>cubic-bezier(.34,1.4,.5,1)</td><td>Tiny overshoot — chips, checkmarks</td></tr>
+    </table>
+    <div class="demobox">
+      <span class="badge badge--info">Mic listening: sonar rings 1.6 s</span>
+      <span class="badge badge--info">Loading: shimmer 1.4 s</span>
+      <span class="badge badge--info">Voice: equaliser bars 1 s</span>
+      <span class="badge badge--info">Typing: 3-dot bounce 1.2 s</span>
+    </div>
+  </section>
+
+  <!-- ============ 07 A11Y ============ -->
+  <section class="sg-sec" id="a11y">
+    <h2><span class="sg-num">07</span> Accessibility (WCAG 2.2 AA)</h2>
+    <div class="sg-cols">
+      <div class="card card--pad">
+        <h3>Built in</h3>
+        <ul class="check-list" role="list" style="font-size:var(--fs-14)">
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg> Contrast ≥ 4.5:1 text, ≥ 3:1 graphics (AA-tuned derivatives)</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg> Full keyboard paths with visible 3-px focus ring + skip link</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg> ARIA: labelled icon buttons, <code>aria-pressed</code> toggles, live-region toasts/chat, <code>role=dialog</code> modals with Esc close</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg> 44–58 px touch targets; ≥ 14 px minimum text</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg> <code>lang="hi" / lang="mr"</code> on Devanagari runs</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg> Status never shown by colour alone; reduced-motion honoured</li>
+        </ul>
+      </div>
+      <div class="card card--pad">
+        <h3>Voice-first inclusivity</h3>
+        <ul class="check-list" role="list" style="font-size:var(--fs-14)">
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg> Everything readable is also speakable (mic on every flow start)</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg> Recognised speech is echoed back in writing for confirmation</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg> Large-type mode scales tokens (user setting, 125%/150%)</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg> Named emergency route (108) pinned on triage screens</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 08 COPY ============ -->
+  <section class="sg-sec" id="copy">
+    <h2><span class="sg-num">08</span> Multilingual copy</h2>
+    <p class="sg-lead">Layouts accept ~1.3× expansion for Devanagari; buttons never use fixed widths. Dates render DD/MM/YYYY; key strings below ship in <code>i18n.js</code>.</p>
+    <table class="sg-table">
+      <tr><th>Key</th><th>English</th><th lang="hi">हिन्दी</th><th lang="mr">मराठी</th></tr>
+      <tr><td><code>landing.tagline</code></td><td>Stay Home, Consult Online</td><td lang="hi">घर पर रहें, ऑनलाइन सलाह लें</td><td lang="mr">घरात रहा, ऑनलाइन सल्ला घ्या</td></tr>
+      <tr><td><code>action.book</code></td><td>Book Appointment</td><td lang="hi">अपॉइंटमेंट बुक करें</td><td lang="mr">नियुक्ती बुक करा</td></tr>
+      <tr><td><code>triage.prompt</code></td><td>Describe your symptoms…</td><td lang="hi">अपनी शिकायत बताएं…</td><td lang="mr">आपली लक्षणे सांगा…</td></tr>
+      <tr><td><code>urgency.routine</code></td><td>Routine</td><td lang="hi">सामान्य</td><td lang="mr">सामान्य</td></tr>
+      <tr><td><code>urgency.urgent</code></td><td>Urgent</td><td lang="hi">तत्काल</td><td lang="mr">तातडीचे</td></tr>
+      <tr><td><code>search.placeholder</code></td><td>Search by specialty or location</td><td lang="hi">विशेषज्ञता या स्थान से खोजें</td><td lang="mr">विशेषज्ञता किंवा ठिकाणानुसार शोधा</td></tr>
+      <tr><td><code>call.connecting</code></td><td>Connecting to Doctor…</td><td lang="hi">चिकित्सक से कनेक्ट हो रहा है…</td><td lang="mr">डॉक्टरशी संपर्क साधत आहे…</td></tr>
+      <tr><td><code>error.offline</code></td><td>No Internet Connection</td><td lang="hi">कोई इंटरनेट कनेक्शन नहीं</td><td lang="mr">इंटरनेट कनेक्शन नाही</td></tr>
+      <tr><td><code>toast.booked</code></td><td>Appointment Confirmed</td><td lang="hi">अपॉइंटमेंट की पुष्टि हो गई</td><td lang="mr">नियुक्ती पुष्टी झाली</td></tr>
+    </table>
+  </section>
+
+  <!-- ============ 09 FLOWS ============ -->
+  <section class="sg-sec" id="flow">
+    <h2><span class="sg-num">09</span> Core user flow</h2>
+    <p class="sg-lead">The interactive prototype links these exact steps (also mirrored as <code>flow.mmd</code> in handoff).</p>
+    <div class="flowline">
+      <span class="fl"><b>Register / OTP login</b><small>role select</small></span><i>→</i>
+      <span class="fl"><b>Voice / text triage</b><small>symptoms confirmed</small></span><i>→</i>
+      <span class="fl amber"><b>Explainable result</b><small>urgency + action</small></span><i>→</i>
+      <span class="fl"><b>Doctor search</b><small>filters + map</small></span><i>→</i>
+      <span class="fl"><b>Book slot</b><small>double-book lock</small></span><i>→</i>
+      <span class="fl teal"><b>Video consult</b><small>WebRTC · E2E</small></span><i>→</i>
+      <span class="fl"><b>AI summary sign-off</b><small>doctor verifies</small></span><i>→</i>
+      <span class="fl green"><b>Records timeline</b><small>FHIR · ABHA</small></span>
+    </div>
+    <div class="flowline" style="margin-top:16px">
+      <span class="fl red"><b>Offline?</b><small>queue locally</small></span><i>→</i>
+      <span class="fl"><b>Auto-sync on reconnect</b><small>conflict-safe merge</small></span>
+    </div>
+  </section>
+
+  <footer class="footer" style="margin-top:40px">
+    <div class="fine" style="border:0;padding-top:0;max-width:1200px;margin:0 auto">
+      <span>MediTriage AI Design System v1.0 · September 2026</span>
+      <span><a href="handoff/tokens.json">tokens.json</a> · <a href="handoff/tailwind.config.js">tailwind.config.js</a> · <a href="handoff/components.md">components.md</a> · <a href="index.html">Prototype</a></span>
+    </div>
+  </footer>
+</main>
+
+<div id="toast-root" aria-live="polite"></div>
+<script>
+/* styleguide-only helpers */
+(function () {
+  var ICONS = ["home","chat","mic","mic-off","stethoscope","calendar","calendar-check","folder","file-text","activity","grid","bell","search","video","video-off","phone","phone-off","message-square","map-pin","clock","check","check-circle","x","x-circle","alert-triangle","info","chevron-down","chevron-right","arrow-right","download","share-2","filter","sliders","shield-check","wifi","wifi-off","thermometer","droplet","wind","heart","pill","user","users","settings","log-out","edit-2","send","refresh-cw","award","eye","zap","trending-up","menu","lock","smartphone","globe","languages","headphones","building","book-open"];
+  var g = document.getElementById("ic-grid");
+  g.innerHTML = ICONS.map(function (n) { return '<div class="ic"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-' + n + '"/></svg><code>' + n + '</code></div>'; }).join("");
+  document.querySelectorAll("[data-toast]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var kind = b.dataset.toast;
+      var root = document.getElementById("toast-root");
+      var el = document.createElement("div");
+      el.className = "toast toast--" + kind;
+      el.innerHTML = '<span class="toast__icon"><svg class="icon" aria-hidden="true"><use href="#i-' + (kind === "success" ? "check-circle" : kind === "error" ? "x-circle" : kind === "warning" ? "alert-triangle" : "info") + '"/></svg></span><div><strong>' + kind[0].toUpperCase() + kind.slice(1) + ' toast</strong><p>Slides in 320 ms · auto-dismiss 4.6 s · aria-live polite</p></div>';
+      root.appendChild(el);
+      setTimeout(function () { el.classList.add("is-leaving"); setTimeout(function () { el.remove(); }, 220); }, 4600);
+    });
+  });
+})();
+</script>
+</body>

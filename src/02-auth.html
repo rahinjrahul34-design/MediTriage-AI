@@ -1,0 +1,125 @@
+<!-- ============================================================
+     AUTH · Login (OTP) + Signup (role selection)
+     ============================================================ -->
+<section class="screen page auth" id="screen-login" aria-label="Log in">
+  <aside class="auth__aside">
+    <svg class="mandala-bg" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width=".8"><circle cx="50" cy="50" r="47"/><circle cx="50" cy="50" r="34"/><circle cx="50" cy="50" r="20"/><use href="#petals"/></g></svg>
+    <a class="brand" href="#/">
+      <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="rgba(255,255,255,.16)"/><path d="M20 7c-3.2 5-3.2 9.8 0 14 3.2-4.2 3.2-9 0-14zM8.5 13.5c1.8 6 6.3 9.5 11.4 9.8C18 17.4 13.6 14 8.5 13.5zm23 0c-5.1.5-9.5 3.9-11.4 9.8 5.1-.3 9.6-3.8 11.4-9.8z" fill="#fff"/><path d="M6.5 26.5h7l2.8-4.8 3.4 8 2.8-5.2h11" fill="none" stroke="#FFC107" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="brand__name">Medi<em>Triage</em> AI</span>
+    </a>
+    <figure class="hero-mini"><img src="assets/img/hero.jpg" alt="Doctor consulting a patient over a secure video call"></figure>
+    <h2>Your health is one OTP away</h2>
+    <p>No passwords to remember. Log in with the mobile number your family already knows.</p>
+    <div class="ticks">
+      <span><svg class="icon" aria-hidden="true"><use href="#i-shield-check"/></svg> OTP-only login</span>
+      <span><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg> ABHA / ABDM ready</span>
+      <span><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg> Data hosted in India</span>
+    </div>
+  </aside>
+
+  <div class="auth__panel">
+    <div class="auth-card">
+      <a class="back" href="#/"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-left"/></svg> Back to home</a>
+      <h1 data-i18n="action.login">Log in</h1>
+      <p class="sub" id="login-hint">We’ll send a one-time password by SMS &amp; WhatsApp.</p>
+      <form id="login-form" novalidate onsubmit="return false">
+        <div class="field" id="login-phone-field">
+          <label class="field__label" for="login-phone">Mobile number</label>
+          <div class="input-prefix">
+            <span class="prefix">+91</span>
+            <input id="login-phone" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="98220 12345" aria-describedby="login-phone-err">
+          </div>
+          <span class="field__error" id="login-phone-err"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-alert-triangle"/></svg> Enter a valid 10-digit mobile number</span>
+        </div>
+        <button class="btn btn--primary btn--block" id="send-otp" type="button"><svg class="icon" aria-hidden="true"><use href="#i-smartphone"/></svg> Send OTP</button>
+        <div id="otp-area" class="hide" style="display:grid;gap:18px">
+          <div class="field">
+            <label class="field__label">Enter 4-digit OTP</label>
+            <div class="otp-row">
+              <input class="otp-box" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 1">
+              <input class="otp-box" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 2">
+              <input class="otp-box" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 3">
+              <input class="otp-box" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 4">
+            </div>
+          </div>
+          <div class="auth-meta">
+            <button class="btn btn--ghost btn--sm" type="button" id="resend-otp" disabled>Resend in 24s</button>
+            <span class="muted" style="font-size:var(--fs-12)">Didn’t get it? Check WhatsApp too</span>
+          </div>
+          <button class="btn btn--primary btn--block" id="verify-otp" type="button"><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg> Verify &amp; continue</button>
+        </div>
+      </form>
+      <div class="divider">or</div>
+      <p class="auth-alt">New to MediTriage? <a href="#/signup"><b>Create an account</b></a></p>
+      <p class="auth-alt" style="margin-top:14px;font-size:var(--fs-12)"><svg class="icon icon--sm" style="vertical-align:-3px" aria-hidden="true"><use href="#i-lock"/></svg> Secured by OTP · we never ask for your password or card PIN</p>
+    </div>
+  </div>
+</section>
+
+<section class="screen page auth" id="screen-signup" aria-label="Create account">
+  <aside class="auth__aside" style="background:linear-gradient(160deg,#0C3340 0%,#2F95B9 58%,#57AFD6 100%)">
+    <svg class="mandala-bg" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width=".8"><circle cx="50" cy="50" r="47"/><circle cx="50" cy="50" r="34"/><circle cx="50" cy="50" r="20"/><use href="#petals"/></g></svg>
+    <a class="brand" href="#/">
+      <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="rgba(255,255,255,.16)"/><path d="M20 7c-3.2 5-3.2 9.8 0 14 3.2-4.2 3.2-9 0-14zM8.5 13.5c1.8 6 6.3 9.5 11.4 9.8C18 17.4 13.6 14 8.5 13.5zm23 0c-5.1.5-9.5 3.9-11.4 9.8 5.1-.3 9.6-3.8 11.4-9.8z" fill="#fff"/><path d="M6.5 26.5h7l2.8-4.8 3.4 8 2.8-5.2h11" fill="none" stroke="#FFC107" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="brand__name">Medi<em>Triage</em> AI</span>
+    </a>
+    <figure class="hero-mini"><img src="assets/img/rural.jpg" alt="Rural healthcare outreach with a doctor and patient"></figure>
+    <h2>Care for the whole family, in one account</h2>
+    <p>Book for yourself, your parents or your children — and keep everyone’s records together, safely.</p>
+    <div class="ticks">
+      <span><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg> Family profiles</span>
+      <span><svg class="icon" aria-hidden="true"><use href="#i-languages"/></svg> 3 languages at launch</span>
+      <span><svg class="icon" aria-hidden="true"><use href="#i-wifi-off"/></svg> Works offline</span>
+    </div>
+  </aside>
+
+  <div class="auth__panel">
+    <div class="auth-card" style="width:min(470px,100%)">
+      <a class="back" href="#/"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-left"/></svg> Back to home</a>
+      <h1>Create your account</h1>
+      <p class="sub">First, tell us who is joining MediTriage.</p>
+
+      <div class="role-grid" role="group" aria-label="Choose your role" style="margin-bottom:22px">
+        <button type="button" class="role-card" aria-pressed="false">
+          <span class="tile tile--blue"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg></span>
+          <b>Patient</b><span>I want triage, doctors &amp; records for me and my family</span>
+          <span class="tick"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg></span>
+        </button>
+        <button type="button" class="role-card" aria-pressed="false">
+          <span class="tile tile--teal"><svg class="icon" aria-hidden="true"><use href="#i-stethoscope"/></svg></span>
+          <b>Doctor</b><span>I want to consult online and manage my practice</span>
+          <span class="tick"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg></span>
+        </button>
+      </div>
+      <p class="hide" id="signup-role-error" style="margin:-10px 0 14px;font-size:var(--fs-12);font-weight:600;color:var(--red-700);display:flex;align-items:center;gap:6px"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-alert-triangle"/></svg> Please choose Patient or Doctor to continue</p>
+      <style>#signup-role-error.hide{display:none !important}</style>
+
+      <form id="signup-form" style="display:grid;gap:18px" novalidate>
+        <div class="field" id="su-name-field">
+          <label class="field__label" for="su-name">Full name</label>
+          <input class="input" id="su-name" autocomplete="name" placeholder="e.g. Kavita Deshmukh">
+          <span class="field__error"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-alert-triangle"/></svg> Please enter your full name</span>
+        </div>
+        <div class="field">
+          <label class="field__label" for="su-phone">Mobile number</label>
+          <div class="input-prefix"><span class="prefix">+91</span><input id="su-phone" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="98220 12345"></div>
+        </div>
+        <div class="field">
+          <label class="field__label" for="su-lang">Preferred language</label>
+          <select class="select" id="su-lang">
+            <option value="en">English</option>
+            <option value="hi" lang="hi">हिन्दी (Hindi)</option>
+            <option value="mr" lang="mr">मराठी (Marathi)</option>
+          </select>
+          <span class="field__hint">You can switch anytime from the top bar — dates always show as DD/MM/YYYY.</span>
+        </div>
+        <label class="check"><input type="checkbox" checked><span class="box"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span><span style="font-size:var(--fs-14)">Link my ABHA (Ayushman Bharat) health ID for seamless records <span class="muted">(optional, revocable)</span></span></label>
+        <label class="check"><input type="checkbox" required><span class="box"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span><span style="font-size:var(--fs-14)">I agree to the <a href="#/signup">Terms</a> &amp; <a href="#/signup">Privacy Policy</a></span></label>
+        <button class="btn btn--primary btn--block btn--lg" type="submit"><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg> <span data-i18n="action.getStarted">Get Started</span></button>
+      </form>
+      <p class="auth-alt">Already have an account? <a href="#/login"><b>Log in</b></a></p>
+    </div>
+  </div>
+</section>
+</div><!-- /chrome-root -->
